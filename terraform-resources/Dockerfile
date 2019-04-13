@@ -15,5 +15,7 @@ RUN go get -u github.com/golang/dep/cmd/dep
 WORKDIR $GOPATH/src/github.com/gruntwork-io/terratest/modules/terraform
 
 RUN go install
-WORKDIR $GOPATH/src/app/test/
-ENTRYPOINT ["sh", "-c", "dep ensure -v && go test -v"]
+WORKDIR $GOPATH/src/project/
+
+CMD ["version"]
+ENTRYPOINT ["go"]
