@@ -12,4 +12,4 @@ This is a fully functional Jenkins server, based on the Official Jenkins Docker 
 
 
 ## Important
-To customize the extended `Dockerfile` and for usage please consider reading the official documentation: https://github.com/jenkinsci/docker/blob/master/README.md
+To customize the extended `Dockerfile` and for its usage, please consider reading the official documentation: https://github.com/jenkinsci/docker/blob/master/README.md
