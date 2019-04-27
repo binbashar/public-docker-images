@@ -1,8 +1,6 @@
 # Jenkins Continuous Integration and Delivery server.
 
-This is a fully functional Jenkins server, based on the Official Jenkins Docker image
-
-The Jenkins Continuous Integration and Delivery server [available on Docker Hub](https://hub.docker.com/r/jenkins/jenkins).
+This is a fully functional Jenkins server, based on the Official Jenkins Docker image [available on Docker Hub](https://hub.docker.com/r/jenkins/jenkins).
 
 [![Docker Stars](https://img.shields.io/docker/stars/jenkins/jenkins.svg)](https://hub.docker.com/r/jenkins/jenkins/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/jenkins/jenkins.svg)](https://hub.docker.com/r/jenkins/jenkins/)
