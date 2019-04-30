@@ -1,0 +1,69 @@
+version: '3.7'
+
+#============================================#
+# Docker compose network config
+#============================================#
+networks:
+  bb-jenkins:
+
+services:
+#============================================#
+# Setup the local jenkins container
+#============================================#
+    jenkins_local:
+        build:
+          context: ./docker/jenkins/
+          dockerfile: Dockerfile_jenkins_extras
+        ports:
+            - 8080:8080
+            - 50000:50000
+        volumes:
+
+            # Jenkins home volume - configs will persist and be versioned
+            - ./docker/jenkins/jenkins_home:/var/jenkins_home
+            # Use persistent volume
+            #- jenkins_home_v2:/var/jenkins_home:rw
+
+            # CURRENTLY NOT BEING IN USE (only for Linux - not working in Mac/Win).
+            # Docker client and Docker Socket are mapped so that docker commands running within the Jenkins (job)
+            # can actually talk to the host Docker Machine.
+            #- /var/run/docker.sock:/var/run/docker.sock
+            # $(which docker) => /usr/bin/docker
+            #- /usr/bin/docker:/usr/bin/docker
+
+        # FOR LINUX
+        # This NW mode will allow us to ssh as if we were originating the cx from localhost without having to
+        # update Firewall configurations.
+        # However this
+        #network_mode: host
+
+        # FOR LINUX/MAC
+        # This NW mode this will allow us to ssh as if we were originating the cx from behind the docker bridge proxy
+        # interface, this will need Firewall inbound allow configs for por TPC:22 (SSH)
+        # network_mode: bridge
+
+        networks:
+          - bb-jenkins
+
+        env_file:
+        - ./docker/jenkins/jenkins.env
+
+#============================================#
+# Setup the logs container
+#============================================#
+    logs_dozzle_jenkins:
+    # Centralized docker logs
+      image: amir20/dozzle:latest
+      ports:
+        - 8888:8080
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+      networks:
+        - bb-jenkins
+
+#============================================#
+# Persistent Volumes
+#============================================#
+volumes:
+    jenkins_home_v2:
+      driver: local
