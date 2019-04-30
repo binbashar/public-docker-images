@@ -1,4 +1,4 @@
-CREATE TABLE `db_test`.`tbl_user5` (
+CREATE TABLE `db_test`.`tbl_user` (
   `user_id` BIGINT AUTO_INCREMENT,
   `user_name` VARCHAR(45) NULL,
   `user_username` VARCHAR(45) NULL,
