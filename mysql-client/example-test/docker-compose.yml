@@ -1,0 +1,64 @@
+version: '3.7'
+
+#============================================#
+# Docker compose network config
+#============================================#
+networks:
+  bb-mysql:
+    driver: bridge
+
+services:
+#============================================#
+# Setup Database (MySQL 5.6 Server) container
+#============================================#
+    mysql-server-5.6:
+        image: mysql:5.6
+        expose:
+            - 3306
+        volumes:
+            - database_data_5.6:/var/lib/mysql
+        env_file:
+          - ./mysql-server.env
+        networks:
+            - bb-mysql
+
+#============================================#
+# Setup Database (MySQL 5.7 Server) container
+#============================================#
+    mysql-server-5.7:
+        image: mysql:5.7
+        expose:
+            - 3306
+        volumes:
+            - database_data_5.7:/var/lib/mysql
+        env_file:
+          - ./mysql-server.env
+        networks:
+            - bb-mysql
+
+#============================================#
+# Setup Database (MySQL 8.0 Server) container
+#============================================#
+    mysql-server-8.0:
+        image: mysql:8.0
+        command: --default-authentication-plugin=mysql_native_password
+        restart: always
+        expose:
+            - 3306
+        volumes:
+            - database_data_8.0:/var/lib/mysql
+        env_file:
+          - ./mysql-server.env
+        networks:
+            - bb-mysql
+
+#============================================#
+# Persistent Database Volumes
+#============================================#
+volumes:
+    database_data_5.6:
+        driver: local
+    database_data_5.7:
+        driver: local
+    database_data_8.0:
+        driver: local

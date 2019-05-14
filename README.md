@@ -18,7 +18,6 @@
 ![GitHub release](https://img.shields.io/github/release/binbashar/public-docker-images.svg)
 ![GitHub Release Date](https://img.shields.io/github/release-date/binbashar/public-docker-images.svg)
 ![GitHub contributors](https://img.shields.io/github/contributors/binbashar/public-docker-images.svg)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/y/binbashar/public-docker-images.svg)
 
 ![GitHub followers](https://img.shields.io/github/followers/binbashar.svg?style=social)
 ![GitHub forks](https://img.shields.io/github/forks/binbashar/public-docker-images.svg?style=social)
@@ -27,6 +26,7 @@
 
 |Docker Image| Build Status|
 |---|---|
-| `terraform-resources` |![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/binbash/terraform-resources.svg) ![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/binbash/terraform-resources.svg)|
 |`jenkins`|![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/binbash/jenkins.svg) ![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/binbash/jenkins.svg)|
+|`mysql-client`|![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/binbash/mysql-client.svg) ![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/binbash/mysql-client.svg)|
 |`php7.1-composer`|![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/binbash/php7.1-composer.svg) ![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/binbash/php7.1-composer.svg)|
+| `terraform-resources` |![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/binbash/terraform-resources.svg) ![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/binbash/terraform-resources.svg)|
