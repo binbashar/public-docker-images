@@ -18,7 +18,6 @@
 ![GitHub release](https://img.shields.io/github/release/binbashar/public-docker-images.svg)
 ![GitHub Release Date](https://img.shields.io/github/release-date/binbashar/public-docker-images.svg)
 ![GitHub contributors](https://img.shields.io/github/contributors/binbashar/public-docker-images.svg)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/y/binbashar/public-docker-images.svg)
 
 ![GitHub followers](https://img.shields.io/github/followers/binbashar.svg?style=social)
 ![GitHub forks](https://img.shields.io/github/forks/binbashar/public-docker-images.svg?style=social)
