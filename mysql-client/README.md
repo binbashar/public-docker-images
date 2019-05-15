@@ -1,6 +1,14 @@
 # mysql-client
 
-Docker image with a MySQL 5.6, 5.7 and 8.0 compatible client.
+#### Docker image with a MySQL 5.6, 5.7 and 8.0 compatible client.
+
+<div align="left">
+    <img src="../figures/mysql.png" alt="drawing" width="250"/>
+</div>
+
+[https://www.mysql.com/](https://www.mysql.com/).
+
+
 
 This Docker image is based on Debian Stretch (slim).
 
