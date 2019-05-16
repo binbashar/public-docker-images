@@ -1,4 +1,4 @@
-FROM alpine:3.9
+FROM alpine:3.8.4
 
 RUN apk --no-cache add \
   ruby-bundler=1.16.2-r1 \
