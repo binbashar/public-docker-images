@@ -43,3 +43,5 @@ changelog-init: ## git changelog (https://github.com/git-chglog/git-chglog) conf
 changelog: ## git changelog (https://github.com/git-chglog/git-chglog)
 	docker run --rm -v ${PWD_DIR}:/data -it binbash/git-release -o CHANGELOG.md --next-tag ${GIT_SEMTAG_VER}
 	sudo chown -R ${LOCAL_OS_USER}:${LOCAL_OS_USER} ./.chglog
+	sudo chown -R ${LOCAL_OS_USER}:${LOCAL_OS_USER} ./CHANGELOG.md
+
