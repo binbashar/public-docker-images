@@ -26,6 +26,7 @@
 
 |Docker Image| Build Status|
 |---|---|
+|`git-release`|[![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/binbash/git-release.svg)](https://cloud.docker.com/u/binbash/repository/docker/binbash/git-release/general) [![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/binbash/git-release.svg)](https://cloud.docker.com/u/binbash/repository/docker/binbash/git-release/builds)|
 |`jenkins`|[![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/binbash/jenkins.svg)](https://cloud.docker.com/u/binbash/repository/docker/binbash/jenkins/general) [![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/binbash/jenkins.svg)](https://cloud.docker.com/u/binbash/repository/docker/binbash/jenkins/builds)|
 |`mysql-client`|[![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/binbash/mysql-client.svg)](https://cloud.docker.com/u/binbash/repository/docker/binbash/mysql-client/general) [![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/binbash/mysql-client.svg)](https://cloud.docker.com/u/binbash/repository/docker/binbash/mysql-client/builds)|
 |`php7.1-composer`|[![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/binbash/php7.1-composer.svg)](https://cloud.docker.com/u/binbash/repository/docker/binbash/php7.1-composer/general) [![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/binbash/php7.1-composer.svg)](https://cloud.docker.com/u/binbash/repository/docker/binbash/php7.1-composer/builds)|
