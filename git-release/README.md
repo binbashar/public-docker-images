@@ -99,7 +99,7 @@ changelog-init: ## git changelog (https://github.com/git-chglog/git-chglog) conf
 		docker run --rm -v ${PWD_DIR}:/data -it binbash/git-release --init;\
 		sudo chown -R ${LOCAL_OS_USER}:${LOCAL_OS_USER} ./.chglog;\
     else\
-		echo "==============================";\
+        echo "==============================";\
     	echo "git-chglog already initialized";\
     	echo "==============================";\
     	echo "$$(ls ./.chglog)";\
@@ -109,5 +109,5 @@ changelog-init: ## git changelog (https://github.com/git-chglog/git-chglog) conf
 changelog: ## git changelog (https://github.com/git-chglog/git-chglog)
 	docker run --rm -v ${PWD_DIR}:/data -it binbash/git-release -o CHANGELOG.md --next-tag ${GIT_SEMTAG_VER}
 	sudo chown -R ${LOCAL_OS_USER}:${LOCAL_OS_USER} ./.chglog
-    sudo chown -R ${LOCAL_OS_USER}:${LOCAL_OS_USER} ./CHANGELOG.md
+	sudo chown -R ${LOCAL_OS_USER}:${LOCAL_OS_USER} ./CHANGELOG.md
 ```
