@@ -16,9 +16,9 @@ docker run --rm \
 -it binbash/git-release
 endef
 
-GIT_SEMTAG_VER_PATCH := $(shell ${GIT_SEMTAG_CMD_PREFIX} final -s patch)
-GIT_SEMTAG_VER_MINOR := $(shell ${GIT_SEMTAG_CMD_PREFIX} final -s minor)
-GIT_SEMTAG_VER_MINOR := $(shell ${GIT_SEMTAG_CMD_PREFIX} final -s major)
+GIT_SEMTAG_VER_PATCH := $(shell ${GIT_SEMTAG_CMD_PREFIX} final -s patch -o)
+GIT_SEMTAG_VER_MINOR := $(shell ${GIT_SEMTAG_CMD_PREFIX} final -s minor -o)
+GIT_SEMTAG_VER_MINOR := $(shell ${GIT_SEMTAG_CMD_PREFIX} final -s major -o)
 
 help:
 	@echo 'Available Commands:'
@@ -26,19 +26,16 @@ help:
 
 release-patch: ## releasing patch (eg: 0.0.1 -> 0.0.2) based on semantic tagging script for Git
 	# pre-req -> https://github.com/pnikosis/semtag
-	${GIT_SEMTAG_CMD_PREFIX} --version
 	${GIT_SEMTAG_CMD_PREFIX} get
 	${GIT_SEMTAG_CMD_PREFIX} final -s patch
 
 release-minor: ## releasing minor (eg: 0.0.2 -> 0.1.0) based on semantic tagging script for Git
 	# pre-req -> https://github.com/pnikosis/semtag
-	${GIT_SEMTAG_CMD_PREFIX} --version
 	${GIT_SEMTAG_CMD_PREFIX} get
 	${GIT_SEMTAG_CMD_PREFIX} final -s minor
 
 release-major: ## releasing major (eg: 0.1.0 -> 1.0.0) based on semantic tagging script for Git
 	# pre-req -> https://github.com/pnikosis/semtag
-	${GIT_SEMTAG_CMD_PREFIX} --version
 	${GIT_SEMTAG_CMD_PREFIX} get
 	${GIT_SEMTAG_CMD_PREFIX} final -s major
 
@@ -47,7 +44,7 @@ changelog-init: ## git-chglog (https://github.com/git-chglog/git-chglog) config 
 		docker run --rm -v ${PWD_DIR}:/data -it binbash/git-release --init;\
 		sudo chown -R ${LOCAL_OS_USER}:${LOCAL_OS_USER} ./.chglog;\
 	else\
-			echo "==============================";\
+		echo "==============================";\
     	echo "git-chglog already initialized";\
     	echo "==============================";\
     	echo "$$(ls ./.chglog)";\
