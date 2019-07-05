@@ -46,7 +46,7 @@ changelog-init: ## git changelog (https://github.com/git-chglog/git-chglog) conf
 	@if [ ! -d ./.chglog ]; then\
 		docker run --rm -v ${PWD_DIR}:/data -it binbash/git-release --init;\
 		sudo chown -R ${LOCAL_OS_USER}:${LOCAL_OS_USER} ./.chglog;\
-    else\
+	else\
 		echo "==============================";\
     	echo "git-chglog already initialized";\
     	echo "==============================";\
