@@ -36,36 +36,35 @@ release-minor: ## releasing minor (eg: 0.0.2 -> 0.1.0) based on semantic tagging
 	${GIT_SEMTAG_CMD_PREFIX} get
 	${GIT_SEMTAG_CMD_PREFIX} final -s minor
 
-release-major: ## releasing minor (eg: 0.1.0 -> 1.0.0) based on semantic tagging script for Git
+release-major: ## releasing major (eg: 0.1.0 -> 1.0.0) based on semantic tagging script for Git
 	# pre-req -> https://github.com/pnikosis/semtag
 	${GIT_SEMTAG_CMD_PREFIX} --version
 	${GIT_SEMTAG_CMD_PREFIX} get
 	${GIT_SEMTAG_CMD_PREFIX} final -s major
 
-changelog-init: ## git changelog (https://github.com/git-chglog/git-chglog) config initialization -> ./.chglog
+changelog-init: ## git-chglog (https://github.com/git-chglog/git-chglog) config initialization -> ./.chglog
 	@if [ ! -d ./.chglog ]; then\
 		docker run --rm -v ${PWD_DIR}:/data -it binbash/git-release --init;\
 		sudo chown -R ${LOCAL_OS_USER}:${LOCAL_OS_USER} ./.chglog;\
 	else\
-		echo "==============================";\
+			echo "==============================";\
     	echo "git-chglog already initialized";\
     	echo "==============================";\
     	echo "$$(ls ./.chglog)";\
     	echo "==============================";\
-    fi
+	fi
 
-changelog-patch: ## git changelog (https://github.com/git-chglog/git-chglog)
+changelog-patch: ## git-chglog generation for path release
 	docker run --rm -v ${PWD_DIR}:/data -it binbash/git-release -o CHANGELOG.md --next-tag ${GIT_SEMTAG_VER_PATCH}
 	sudo chown -R ${LOCAL_OS_USER}:${LOCAL_OS_USER} ./.chglog
 	sudo chown -R ${LOCAL_OS_USER}:${LOCAL_OS_USER} ./CHANGELOG.md
 
-changelog-minor: ## git changelog (https://github.com/git-chglog/git-chglog)
+changelog-minor: ## git-chglog generation for minor release
 	docker run --rm -v ${PWD_DIR}:/data -it binbash/git-release -o CHANGELOG.md --next-tag ${GIT_SEMTAG_VER_MINOR}
 	sudo chown -R ${LOCAL_OS_USER}:${LOCAL_OS_USER} ./.chglog
 	sudo chown -R ${LOCAL_OS_USER}:${LOCAL_OS_USER} ./CHANGELOG.md
 
-changelog-major: ## git changelog (https://github.com/git-chglog/git-chglog)
+changelog-major: ## git-chglog generation for major release
 	docker run --rm -v ${PWD_DIR}:/data -it binbash/git-release -o CHANGELOG.md --next-tag ${GIT_SEMTAG_VER_MAJOR}
 	sudo chown -R ${LOCAL_OS_USER}:${LOCAL_OS_USER} ./.chglog
 	sudo chown -R ${LOCAL_OS_USER}:${LOCAL_OS_USER} ./CHANGELOG.md
-
