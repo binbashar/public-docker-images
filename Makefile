@@ -16,32 +16,55 @@ docker run --rm \
 -it binbash/git-release
 endef
 
-GIT_SEMTAG_VER := $(shell ${GIT_SEMTAG_CMD_PREFIX} final -s minor)
+GIT_SEMTAG_VER_PATCH := $(shell ${GIT_SEMTAG_CMD_PREFIX} final -s patch)
+GIT_SEMTAG_VER_MINOR := $(shell ${GIT_SEMTAG_CMD_PREFIX} final -s minor)
+GIT_SEMTAG_VER_MINOR := $(shell ${GIT_SEMTAG_CMD_PREFIX} final -s major)
 
 help:
 	@echo 'Available Commands:'
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf " - \033[36m%-18s\033[0m %s\n", $$1, $$2}'
 
-release: ## releasing based on semantic tagging script for Git
+release-patch: ## releasing patch (eg: 0.0.1 -> 0.0.2) based on semantic tagging script for Git
+	# pre-req -> https://github.com/pnikosis/semtag
+	${GIT_SEMTAG_CMD_PREFIX} --version
+	${GIT_SEMTAG_CMD_PREFIX} get
+	${GIT_SEMTAG_CMD_PREFIX} final -s patch
+
+release-minor: ## releasing minor (eg: 0.0.2 -> 0.1.0) based on semantic tagging script for Git
 	# pre-req -> https://github.com/pnikosis/semtag
 	${GIT_SEMTAG_CMD_PREFIX} --version
 	${GIT_SEMTAG_CMD_PREFIX} get
 	${GIT_SEMTAG_CMD_PREFIX} final -s minor
 
-changelog-init: ## git changelog (https://github.com/git-chglog/git-chglog) config initialization -> ./.chglog
+release-major: ## releasing major (eg: 0.1.0 -> 1.0.0) based on semantic tagging script for Git
+	# pre-req -> https://github.com/pnikosis/semtag
+	${GIT_SEMTAG_CMD_PREFIX} --version
+	${GIT_SEMTAG_CMD_PREFIX} get
+	${GIT_SEMTAG_CMD_PREFIX} final -s major
+
+changelog-init: ## git-chglog (https://github.com/git-chglog/git-chglog) config initialization -> ./.chglog
 	@if [ ! -d ./.chglog ]; then\
 		docker run --rm -v ${PWD_DIR}:/data -it binbash/git-release --init;\
 		sudo chown -R ${LOCAL_OS_USER}:${LOCAL_OS_USER} ./.chglog;\
-    else\
-		echo "==============================";\
+	else\
+			echo "==============================";\
     	echo "git-chglog already initialized";\
     	echo "==============================";\
     	echo "$$(ls ./.chglog)";\
     	echo "==============================";\
-    fi
+	fi
 
-changelog: ## git changelog (https://github.com/git-chglog/git-chglog)
-	docker run --rm -v ${PWD_DIR}:/data -it binbash/git-release -o CHANGELOG.md --next-tag ${GIT_SEMTAG_VER}
+changelog-patch: ## git-chglog generation for path release
+	docker run --rm -v ${PWD_DIR}:/data -it binbash/git-release -o CHANGELOG.md --next-tag ${GIT_SEMTAG_VER_PATCH}
 	sudo chown -R ${LOCAL_OS_USER}:${LOCAL_OS_USER} ./.chglog
 	sudo chown -R ${LOCAL_OS_USER}:${LOCAL_OS_USER} ./CHANGELOG.md
 
+changelog-minor: ## git-chglog generation for minor release
+	docker run --rm -v ${PWD_DIR}:/data -it binbash/git-release -o CHANGELOG.md --next-tag ${GIT_SEMTAG_VER_MINOR}
+	sudo chown -R ${LOCAL_OS_USER}:${LOCAL_OS_USER} ./.chglog
+	sudo chown -R ${LOCAL_OS_USER}:${LOCAL_OS_USER} ./CHANGELOG.md
+
+changelog-major: ## git-chglog generation for major release
+	docker run --rm -v ${PWD_DIR}:/data -it binbash/git-release -o CHANGELOG.md --next-tag ${GIT_SEMTAG_VER_MAJOR}
+	sudo chown -R ${LOCAL_OS_USER}:${LOCAL_OS_USER} ./.chglog
+	sudo chown -R ${LOCAL_OS_USER}:${LOCAL_OS_USER} ./CHANGELOG.md
