@@ -1,8 +1,8 @@
 <div align="center">
-    <img src="https://github.com/binbashar/public-docker-images/blob/master/figures/binbash.png" alt="drawing" width="350"/>
+    <img src="https://raw.githubusercontent.com/binbashar/public-docker-images/master/figures/binbash.png" alt="drawing" width="350"/>
 </div>
 <div align="right">
-  <img src="https://github.com/binbashar/public-docker-images/blob/master/figures/binbash-leverage-docker.png" alt="leverage" width="230"/>
+  <img src="https://raw.githubusercontent.com/binbashar/public-docker-images/master/figures/binbash-leverage-docker.png" alt="leverage" width="230"/>
 </div>
 
 # public-docker-images
