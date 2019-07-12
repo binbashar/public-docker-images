@@ -3,7 +3,10 @@
 
 
 <a name="v0.0.4"></a>
-## [v0.0.4] - 0001-01-01
+## [v0.0.4] - 2019-07-12
+### Pull Requests
+- Merge pull request [#13](https://github.com/binbashar/public-docker-images/issues/13) from binbashar/terraform-resources-makefile
+
 
 <a name="v0.0.3"></a>
 ## [v0.0.3] - 2019-07-05
