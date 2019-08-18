@@ -31,6 +31,58 @@ binbash/k8s-kubectl:v1.12.10 get nodes
 
 ### Test Execution
 
+1. Bash `kubectl` autocompletion check
+```
+$ make test-run-kubectl-bash
+
+docker run -it --rm -v ~/.kube:/root/.kube -v ~/.minikube:/root/.minikube -e "KUBECONFIG=/root/.kube/config" --entrypoint=bash binbash/k8s-kubectl:v1.11.10
+
+bash-5.0# kubectl
+alpha          api-versions   auth           cluster-info   convert        create         drain          explain        label          patch          proxy          run            taint          version
+annotate       apply          autoscale      completion     cordon         delete         edit           expose         logs           plugin         replace        scale          top            wait
+api-resources  attach         certificate    config         cp             describe       exec           get            options        port-forward   rollout        set            uncordon
+```
+
+2. `.bashrc` aliases for `kubectl` (https://github.com/ahmetb/kubectl-aliases)
+```
+bash-5.0# cat /root/.kubectl_aliases |grep kgpoall
+alias kgpoall='kubectl get pods --all-namespaces'
+alias kgpoalloyaml='kubectl get pods --all-namespaces -o=yaml'
+alias kgpoallowide='kubectl get pods --all-namespaces -o=wide'
+alias kgpoallojson='kubectl get pods --all-namespaces -o=json'
+alias kgpoallsl='kubectl get pods --all-namespaces --show-labels'
+alias kgpoallw='kubectl get pods --all-namespaces --watch'
+alias kgpoallwoyaml='kubectl get pods --all-namespaces --watch -o=yaml'
+alias kgpoallowidesl='kubectl get pods --all-namespaces -o=wide --show-labels'
+alias kgpoallslowide='kubectl get pods --all-namespaces --show-labels -o=wide'
+alias kgpoallwowide='kubectl get pods --all-namespaces --watch -o=wide'
+alias kgpoallwojson='kubectl get pods --all-namespaces --watch -o=json'
+alias kgpoallslw='kubectl get pods --all-namespaces --show-labels --watch'
+alias kgpoallwsl='kubectl get pods --all-namespaces --watch --show-labels'
+alias kgpoallslwowide='kubectl get pods --all-namespaces --show-labels --watch -o=wide'
+alias kgpoallwowidesl='kubectl get pods --all-namespaces --watch -o=wide --show-labels'
+alias kgpoallwslowide='kubectl get pods --all-namespaces --watch --show-labels -o=wide'
+
+bash-5.0# kgpoall
+kgpoall          kgpoalloyaml     kgpoallslwowide  kgpoallwowidesl
+kgpoallojson     kgpoallsl        kgpoallw         kgpoallwoyaml
+kgpoallowide     kgpoallslowide   kgpoallwojson    kgpoallwsl
+kgpoallowidesl   kgpoallslw       kgpoallwowide    kgpoallwslowide
+
+bash-5.0# kgpoall
+NAMESPACE     NAME                               READY   STATUS    RESTARTS   AGE
+kube-system   coredns-bb49df795-cw7kl            1/1     Running   12         8d
+kube-system   coredns-bb49df795-rh6rb            1/1     Running   12         8d
+kube-system   etcd-minikube                      1/1     Running   1          22h
+kube-system   kube-addon-manager-minikube        1/1     Running   14         8d
+kube-system   kube-apiserver-minikube            1/1     Running   1          22h
+kube-system   kube-controller-manager-minikube   1/1     Running   0          46m
+kube-system   kube-proxy-p99pc                   1/1     Running   12         7d6h
+kube-system   kube-scheduler-minikube            1/1     Running   13         8d
+         get            options        port-forward   rollout        set            uncordon
+```
+
+2. Full minikube based test
 ```bash
 $ make test-run-kubectl-minikube
 

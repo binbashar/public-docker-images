@@ -1,9 +1,9 @@
 .PHONY: build
 #DOCKER_TAG := v1.11.10
-DOCKER_TAG := v1.12.10
+#DOCKER_TAG := v1.12.10
 #DOCKER_TAG := v1.13.8
 #DOCKER_TAG := v1.14.4
-#DOCKER_TAG := v1.15.1
+DOCKER_TAG := v1.15.1
 
 LOCAL_OS_KUBE_DIR := ~/.kube
 LOCAL_OS_MINIKUBE_DIR := ~/.minikube
