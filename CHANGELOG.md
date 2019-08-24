@@ -2,6 +2,12 @@
 ## [Unreleased]
 
 
+<a name="v0.0.6"></a>
+## [v0.0.6] - 2019-08-24
+### Pull Requests
+- Merge pull request [#15](https://github.com/binbashar/public-docker-images/issues/15) from binbashar/BBL-101-mysql-client-base-image-update
+
+
 <a name="v0.0.5"></a>
 ## [v0.0.5] - 2019-08-21
 ### Pull Requests
@@ -36,7 +42,8 @@
 <a name="v0.0.1"></a>
 ## v0.0.1 - 2019-04-24
 
-[Unreleased]: https://github.com/binbashar/public-docker-images/compare/v0.0.5...HEAD
+[Unreleased]: https://github.com/binbashar/public-docker-images/compare/v0.0.6...HEAD
+[v0.0.6]: https://github.com/binbashar/public-docker-images/compare/v0.0.5...v0.0.6
 [v0.0.5]: https://github.com/binbashar/public-docker-images/compare/v0.0.4...v0.0.5
 [v0.0.4]: https://github.com/binbashar/public-docker-images/compare/v0.0.3...v0.0.4
 [v0.0.3]: https://github.com/binbashar/public-docker-images/compare/v0.0.2...v0.0.3
