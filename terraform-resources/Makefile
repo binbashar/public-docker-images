@@ -1,5 +1,5 @@
 .PHONY: build
-DOCKER_TAG = 0.12.0-beta2
+DOCKER_TAG = 0.12.12
 
 help:
 	@echo 'Available Commands:'
@@ -13,19 +13,19 @@ build-no-cache: ## build docker image no cache
 
 run-go-version: ## docker run go version
 	docker run -it --rm binbash/terraform-resources:0.11.14 version
-	docker run -it --rm binbash/terraform-resources:0.12.3 version
+	docker run -it --rm binbash/terraform-resources:0.12.12 version
 
 run-go-env: ## docker run go env
 	docker run -it --rm binbash/terraform-resources:0.11.14 env
-	docker run -it --rm binbash/terraform-resources:0.12.3 env
+	docker run -it --rm binbash/terraform-resources:0.12.12 env
 
 run-dep-version: ## docker run dep version
 	docker run -it --rm --entrypoint=dep binbash/terraform-resources:0.11.14 version
-	docker run -it --rm --entrypoint=dep binbash/terraform-resources:0.12.3 version
+	docker run -it --rm --entrypoint=dep binbash/terraform-resources:0.12.12 version
 
 run-terraform-version: ## docker run terraform --version
 	docker run -it --rm --entrypoint=/usr/local/go/bin/terraform binbash/terraform-resources:0.11.14 --version
-	docker run -it --rm --entrypoint=/usr/local/go/bin/terraform binbash/terraform-resources:0.12.3 --version
+	docker run -it --rm --entrypoint=/usr/local/go/bin/terraform binbash/terraform-resources:0.12.12 --version
 
 push: ## push docker image to registry
 	docker push binbash/terraform-resources:${DOCKER_TAG}  && docker push binbash/terraform-resources:latest
