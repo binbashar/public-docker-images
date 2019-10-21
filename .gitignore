@@ -1,12 +1,22 @@
 # Hidden files #
 ################
 .*
+#
+# Except
+#
 !*.env.example
+!*.circleci
 !*.dockeringnore
 !*.hosts
 !/.gitignore
 !/.chglog
+!/.gitallowed
 !*.gitkeep
+
+# SSH keys #
+############
+id_rsa
+id_dsa
 
 # OS generated files #
 ######################
@@ -32,6 +42,9 @@ Thumbs.db
 *.zip
 *.tar.gz
 
+#
+# Except
+#
 !lambda_function.*.zip
 !lambda_function.lambda_handler.zip
 !lambda_function.*.zip
