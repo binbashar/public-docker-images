@@ -2,6 +2,13 @@
 ## [Unreleased]
 
 
+<a name="v0.0.7"></a>
+## [v0.0.7] - 2019-10-22
+### Pull Requests
+- Merge pull request [#17](https://github.com/binbashar/public-docker-images/issues/17) from binbashar/BBL-119-tf0.12-test-auto-release
+- Merge pull request [#16](https://github.com/binbashar/public-docker-images/issues/16) from binbashar/BBL-119-tf0.12-test-auto-release
+
+
 <a name="v0.0.6"></a>
 ## [v0.0.6] - 2019-08-24
 ### Pull Requests
@@ -42,7 +49,8 @@
 <a name="v0.0.1"></a>
 ## v0.0.1 - 2019-04-24
 
-[Unreleased]: https://github.com/binbashar/public-docker-images/compare/v0.0.6...HEAD
+[Unreleased]: https://github.com/binbashar/public-docker-images/compare/v0.0.7...HEAD
+[v0.0.7]: https://github.com/binbashar/public-docker-images/compare/v0.0.6...v0.0.7
 [v0.0.6]: https://github.com/binbashar/public-docker-images/compare/v0.0.5...v0.0.6
 [v0.0.5]: https://github.com/binbashar/public-docker-images/compare/v0.0.4...v0.0.5
 [v0.0.4]: https://github.com/binbashar/public-docker-images/compare/v0.0.3...v0.0.4
