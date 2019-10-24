@@ -3,6 +3,8 @@
 #
 FROM binbash/k8s-kubectl:latest
 
+MAINTAINER Binbash Leverage (info@binbash.com.ar)
+
 #
 # ENV Vars
 #
