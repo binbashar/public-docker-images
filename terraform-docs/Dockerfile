@@ -1,5 +1,7 @@
 FROM golang:1.12-stretch
 
+MAINTAINER Binbash Leverage (info@binbash.com.ar)
+
 ARG PACKAGE_PATH="github.com/segmentio/terraform-docs"
 
 RUN apt-get update && apt-get install -y --no-install-recommends git bash

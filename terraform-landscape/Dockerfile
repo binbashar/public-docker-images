@@ -1,5 +1,7 @@
 FROM alpine:3.8.4
 
+MAINTAINER Binbash Leverage (info@binbash.com.ar)
+
 RUN apk --no-cache add \
   ruby-bundler=1.16.2-r1 \
   ruby-json=2.5.5-r0 \
