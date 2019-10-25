@@ -65,6 +65,9 @@ test-stop-docker-compose-komiser: ## docker-compose stop and remove docker conta
 	docker-compose stop
 	docker-compose rm --force
 
+#===========================#
+# ENV SMOKE TEST 			#
+#===========================#
 test-smoke-local: ## curl local smoke test
 	@echo ""
 	@echo "#-------------------------------------------------"
