@@ -30,7 +30,7 @@ ec2 describe-instances --profile your-iam-profile-name-here
 ```
 
 **NOTE:** Check docker image tags which will correspond with the proper scoutsuite version you're currently running:
-- DOCKER_TAG = `5.4.0`
+- DOCKER_TAG = `latest`
 - DOCKER_TAG = `1.16.265`
 
 ### Test Execution
