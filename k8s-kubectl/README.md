@@ -82,7 +82,7 @@ kube-system   kube-scheduler-minikube            1/1     Running   13         8d
          get            options        port-forward   rollout        set            uncordon
 ```
 
-2. Full minikube based test
+3. Full minikube based test
 ```bash
 $ make test-run-kubectl-minikube
 

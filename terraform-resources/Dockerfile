@@ -1,5 +1,7 @@
 FROM golang:latest
 
+MAINTAINER Binbash Leverage (info@binbash.com.ar)
+
 # Here TERRAFORM_VERSION is coming from the custom build args TERRAFORM_VERSION=$DOCKER_TAG hooks/file script.
 # Ref: https://docs.docker.com/docker-hub/builds/advanced/
 ARG TERRAFORM_VERSION

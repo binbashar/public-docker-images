@@ -1,5 +1,7 @@
 FROM debian:stretch-20190812-slim
 
+MAINTAINER Binbash Leverage (info@binbash.com.ar)
+
 ENV MYSQL_MAJOR 8.0
 ENV MYSQL_VERSION 8.0.17-1debian9
 

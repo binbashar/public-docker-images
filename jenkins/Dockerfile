@@ -1,5 +1,7 @@
 FROM jenkins/jenkins:2.174
 
+MAINTAINER Binbash Leverage (info@binbash.com.ar)
+
 #================================================#
 # Setup the number of executors
 #================================================#

@@ -1,5 +1,7 @@
 FROM golang:1.12-stretch
 
+MAINTAINER Binbash Leverage (info@binbash.com.ar)
+
 # sources vars
 ARG PACKAGE_PATH_1="github.com/git-chglog/git-chglog/cmd/git-chglog"
 ARG PACKAGE_PATH_2="https://github.com/pnikosis/semtag"

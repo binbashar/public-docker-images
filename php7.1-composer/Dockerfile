@@ -1,5 +1,7 @@
 FROM ubuntu:16.04
 
+MAINTAINER Binbash Leverage (info@binbash.com.ar)
+
 ENV DEBIAN_FRONTEND=noninteractive
 ENV COMPOSER_ALLOW_SUPERUSER=1
 

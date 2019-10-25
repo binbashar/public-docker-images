@@ -1,0 +1,34 @@
+version: '3.7'
+
+#============================================#
+# Docker compose network config
+#============================================#
+networks:
+  nw-komiser-redis:
+
+services:
+
+  komiser:
+    command: --multiple --redis redis:6379 --duration 30
+    container_name: komiser
+    image: 'mlabouardy/komiser:2.4.0'
+    restart: always
+    ports:
+      - '3000:3000'
+    volumes:
+      - '~/.aws/credentials.komiser:/root/.aws/credentials'
+    depends_on:
+      - redis
+    links:
+      - redis
+    networks:
+      - nw-komiser-redis
+
+  redis:
+    command: redis-server
+    container_name: redis
+    image: 'redis:5.0.6'
+    expose:
+      - '6379'
+    networks:
+      - nw-komiser-redis

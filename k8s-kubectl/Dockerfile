@@ -3,6 +3,8 @@
 #
 FROM alpine:3.10.1 as builder
 
+MAINTAINER Binbash Leverage (info@binbash.com.ar)
+
 # Here K8S_VERSION is coming from the custom build args K8S_VERSION=$DOCKER_TAG hooks/file script.
 # Ref: https://docs.docker.com/docker-hub/builds/advanced/
 ARG K8S_VERSION
