@@ -2,6 +2,12 @@
 ## [Unreleased]
 
 
+<a name="v0.0.10"></a>
+## [v0.0.10] - 2019-10-25
+### Pull Requests
+- Merge pull request [#20](https://github.com/binbashar/public-docker-images/issues/20) from binbashar/BBL-137-docker-scoutsuite-awscli-komiser
+
+
 <a name="v0.0.9"></a>
 ## [v0.0.9] - 2019-10-25
 ### Pull Requests
@@ -61,7 +67,8 @@
 <a name="v0.0.1"></a>
 ## v0.0.1 - 2019-04-24
 
-[Unreleased]: https://github.com/binbashar/public-docker-images/compare/v0.0.9...HEAD
+[Unreleased]: https://github.com/binbashar/public-docker-images/compare/v0.0.10...HEAD
+[v0.0.10]: https://github.com/binbashar/public-docker-images/compare/v0.0.9...v0.0.10
 [v0.0.9]: https://github.com/binbashar/public-docker-images/compare/v0.0.8...v0.0.9
 [v0.0.8]: https://github.com/binbashar/public-docker-images/compare/v0.0.7...v0.0.8
 [v0.0.7]: https://github.com/binbashar/public-docker-images/compare/v0.0.6...v0.0.7
