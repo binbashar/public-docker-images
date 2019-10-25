@@ -26,32 +26,31 @@ You must run `example-test/Makefile`  related commands in order to get the `dock
 - `test-run-sql-cmd`
 - `test-run-sql-file`
 
-#### Execution example for: `make test-run-sql-file`
-```
-$ pwd
-/home/delivery/Binbash/repos/BB-Leverage/docker/public-docker-images/mysql-client/example-test
+#### Execution example for: `make test-run-sql-cmd`
+```bash
+╭─delivery at delivery-I7567 in ~/Binbash/repos/BB-Leverage/docker/public-docker-images/mysql-client on BBL-137-docker-scoutsuite-awscli-komiser✔ using ‹› 19-10-25 - 16:36:03
+╰─○ make
+Available Commands:
+ - build              build docker image
+ - build-no-cache     build docker image no cache
+ - push               push docker image to registry
+ - test-run-sql-cmd   run docker image test-3
+ - test-run-sql-file  run docker image test-2
+ - test-run-ver       run docker image test-1
 
-$ make up
-docker-compose -f "docker-compose-mysql-server.yml" up -d
-Creating network "example-test_bb-mysql" with driver "bridge"
-Creating example-test_mysql-server-8.0_1 ... done
+╭─delivery at delivery-I7567 in ~/Binbash/repos/BB-Leverage/docker/public-docker-images/mysql-client on BBL-137-docker-scoutsuite-awscli-komiser✔ using ‹› 19-10-25 - 16:36:04
+╰─○ make test-run-sql-cmd
+docker-compose -f /home/delivery/Binbash/repos/BB-Leverage/docker/public-docker-images/mysql-client/example-test/docker-compose.yml up -d
+Creating volume "example-test_database_data_5.6" with local driver
+Creating volume "example-test_database_data_5.7" with local driver
+Creating volume "example-test_database_data_8.0" with local driver
 Creating example-test_mysql-server-5.6_1 ... done
+Creating example-test_mysql-server-8.0_1 ... done
 Creating example-test_mysql-server-5.7_1 ... done
-
-$ make ps
-docker-compose -f "docker-compose-mysql-server.yml" ps
-             Name                            Command               State          Ports
-----------------------------------------------------------------------------------------------
-example-test_mysql-server-5.6_1   docker-entrypoint.sh mysqld      Up      3306/tcp
-example-test_mysql-server-5.7_1   docker-entrypoint.sh mysqld      Up      3306/tcp, 33060/tcp
-example-test_mysql-server-8.0_1   docker-entrypoint.sh --def ...   Up      3306/tcp, 33060/tcp
-
-$ cd ..
-
-$ make test-run-sql-file
-docker run --rm --network "example-test_bb-mysql" -v /home/delivery/Binbash/repos/BB-Leverage/docker/public-docker-images/mysql-client/example-test:/sql --link "example-test_mysql-server-5.6_1":mysql -it binbash/mysql-client:v0.0.1 -h mysql -p"mysql_root_pass" -D "db_test" -e "source /sql/create_table.sql"; \
-docker run --rm --network "example-test_bb-mysql" -v /home/delivery/Binbash/repos/BB-Leverage/docker/public-docker-images/mysql-client/example-test:/sql --link "example-test_mysql-server-5.7_1":mysql -it binbash/mysql-client:v0.0.1 -h mysql -p"mysql_root_pass" -D "db_test" -e "source /sql/create_table.sql"; \
-docker run --rm --network "example-test_bb-mysql" -v /home/delivery/Binbash/repos/BB-Leverage/docker/public-docker-images/mysql-client/example-test:/sql --link "example-test_mysql-server-8.0_1":mysql -it binbash/mysql-client:v0.0.1 -h mysql -p"mysql_root_pass" -D "db_test" -e "source /sql/create_table.sql"
+sleep "15"
+docker run --rm --network "example-test_bb-mysql" --link "example-test_mysql-server-5.6_1":mysql -it binbash/mysql-client:0.0.1 -h mysql -u root -p"mysql_root_pass" -e "show databases;"; \
+docker run --rm --network "example-test_bb-mysql" --link "example-test_mysql-server-5.7_1":mysql -it binbash/mysql-client:0.0.1 -h mysql -u root -p"mysql_root_pass" -e "show databases;"; \
+docker run --rm --network "example-test_bb-mysql" --link "example-test_mysql-server-8.0_1":mysql -it binbash/mysql-client:0.0.1 -h mysql -u root -p"mysql_root_pass" -e "show databases;"
 mysql: [Warning] Using a password on the command line interface can be insecure.
 +--------------------+
 | Database           |
@@ -61,11 +60,6 @@ mysql: [Warning] Using a password on the command line interface can be insecure.
 | mysql              |
 | performance_schema |
 +--------------------+
-+-------------------+
-| Tables_in_db_test |
-+-------------------+
-| tbl_user          |
-+-------------------+
 mysql: [Warning] Using a password on the command line interface can be insecure.
 +--------------------+
 | Database           |
@@ -76,11 +70,6 @@ mysql: [Warning] Using a password on the command line interface can be insecure.
 | performance_schema |
 | sys                |
 +--------------------+
-+-------------------+
-| Tables_in_db_test |
-+-------------------+
-| tbl_user          |
-+-------------------+
 mysql: [Warning] Using a password on the command line interface can be insecure.
 +--------------------+
 | Database           |
@@ -91,27 +80,107 @@ mysql: [Warning] Using a password on the command line interface can be insecure.
 | performance_schema |
 | sys                |
 +--------------------+
-+-------------------+
-| Tables_in_db_test |
-+-------------------+
-| tbl_user          |
-+-------------------+
-
-$ cd example-test
-
-$ make down
-docker-compose -f "docker-compose-mysql-server.yml" down
+docker-compose -f /home/delivery/Binbash/repos/BB-Leverage/docker/public-docker-images/mysql-client/example-test/docker-compose.yml stop
 Stopping example-test_mysql-server-5.7_1 ... done
 Stopping example-test_mysql-server-5.6_1 ... done
 Stopping example-test_mysql-server-8.0_1 ... done
+docker-compose -f /home/delivery/Binbash/repos/BB-Leverage/docker/public-docker-images/mysql-client/example-test/docker-compose.yml rm --force
+Going to remove example-test_mysql-server-5.7_1, example-test_mysql-server-5.6_1, example-test_mysql-server-8.0_1
 Removing example-test_mysql-server-5.7_1 ... done
 Removing example-test_mysql-server-5.6_1 ... done
 Removing example-test_mysql-server-8.0_1 ... done
-Removing network example-test_bb-mysql
+docker volume rm example-test_database_data_5.6 example-test_database_data_5.7 example-test_database_data_8.0 --force
+example-test_database_data_5.6
+example-test_database_data_5.7
+example-test_database_data_8.0
+```
+
+#### Execution example for: `make test-run-sql-file`
+```bash
+╭─delivery at delivery-I7567 in ~/Binbash/repos/BB-Leverage/docker/public-docker-images/mysql-client on BBL-137-docker-scoutsuite-awscli-komiser✘✘✘ using ‹› 19-10-25 - 16:37:13
+╰─○ make
+Available Commands:
+ - build              build docker image
+ - build-no-cache     build docker image no cache
+ - push               push docker image to registry
+ - test-run-sql-cmd   run docker image test-3
+ - test-run-sql-file  run docker image test-2
+ - test-run-ver       run docker image test-1
+
+╭─delivery at delivery-I7567 in ~/Binbash/repos/BB-Leverage/docker/public-docker-images/mysql-client on BBL-137-docker-scoutsuite-awscli-komiser✘✘✘ using ‹› 19-10-25 - 16:37:14
+╰─○ make test-run-sql-file
+docker-compose -f /home/delivery/Binbash/repos/BB-Leverage/docker/public-docker-images/mysql-client/example-test/docker-compose.yml up -d
+Creating volume "example-test_database_data_5.6" with local driver
+Creating volume "example-test_database_data_5.7" with local driver
+Creating volume "example-test_database_data_8.0" with local driver
+Creating example-test_mysql-server-5.7_1 ... done
+Creating example-test_mysql-server-8.0_1 ... done
+Creating example-test_mysql-server-5.6_1 ... done
+sleep "15"
+docker run --rm --network "example-test_bb-mysql" -v /home/delivery/Binbash/repos/BB-Leverage/docker/public-docker-images/mysql-client/example-test:/sql --link "example-test_mysql-server-5.6_1":mysql -it binbash/mysql-client:0.0.1 -h mysql -p"mysql_root_pass" -D "db_test" -e "source /sql/create_table.sql"; \
+docker run --rm --network "example-test_bb-mysql" -v /home/delivery/Binbash/repos/BB-Leverage/docker/public-docker-images/mysql-client/example-test:/sql --link "example-test_mysql-server-5.7_1":mysql -it binbash/mysql-client:0.0.1 -h mysql -p"mysql_root_pass" -D "db_test" -e "source /sql/create_table.sql"; \
+docker run --rm --network "example-test_bb-mysql" -v /home/delivery/Binbash/repos/BB-Leverage/docker/public-docker-images/mysql-client/example-test:/sql --link "example-test_mysql-server-8.0_1":mysql -it binbash/mysql-client:0.0.1 -h mysql -p"mysql_root_pass" -D "db_test" -e "source /sql/create_table.sql"
+mysql: [Warning] Using a password on the command line interface can be insecure.
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| db_test            |
+| mysql              |
+| performance_schema |
++--------------------+
++-------------------+
+| Tables_in_db_test |
++-------------------+
+| tbl_user          |
++-------------------+
+mysql: [Warning] Using a password on the command line interface can be insecure.
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| db_test            |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
++-------------------+
+| Tables_in_db_test |
++-------------------+
+| tbl_user          |
++-------------------+
+mysql: [Warning] Using a password on the command line interface can be insecure.
++--------------------+
+| Database           |
++--------------------+
+| db_test            |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
++-------------------+
+| Tables_in_db_test |
++-------------------+
+| tbl_user          |
++-------------------+
+docker-compose -f /home/delivery/Binbash/repos/BB-Leverage/docker/public-docker-images/mysql-client/example-test/docker-compose.yml stop
+Stopping example-test_mysql-server-8.0_1 ... done
+Stopping example-test_mysql-server-5.6_1 ... done
+Stopping example-test_mysql-server-5.7_1 ... done
+docker-compose -f /home/delivery/Binbash/repos/BB-Leverage/docker/public-docker-images/mysql-client/example-test/docker-compose.yml rm --force
+Going to remove example-test_mysql-server-8.0_1, example-test_mysql-server-5.6_1, example-test_mysql-server-5.7_1
+Removing example-test_mysql-server-8.0_1 ... done
+Removing example-test_mysql-server-5.6_1 ... done
+Removing example-test_mysql-server-5.7_1 ... done
+docker volume rm example-test_database_data_5.6 example-test_database_data_5.7 example-test_database_data_8.0 --force
+example-test_database_data_5.6
+example-test_database_data_5.7
+example-test_database_data_8.0
 ```
 
 ## Usage
 
-Review the commands in `mysql-client/Makefile` to validate how to `build`, `run` and `push` this Dockerimage
+Review the commands in `mysql-client/Makefile` to validate how to `build`, `run` and `push` this Docker image
 
 
