@@ -4,12 +4,12 @@
 
 #### Before
 <div align="left">
-    <img src="../figures/terraform-landscape-before.png" alt="drawing" width="900"/>
+    <img src="https://raw.githubusercontent.com/binbashar/public-docker-images/master/figures/terraform-landscape-before.png" alt="drawing" width="900"/>
 </div>
 
 #### After
 <div align="left">
-    <img src="../figures/terraform-landscape-after.png" alt="drawing" width="900"/>
+    <img src="https://raw.githubusercontent.com/binbashar/public-docker-images/master/figures/terraform-landscape-after.png" alt="drawing" width="900"/>
 </div>
 
 ## Docker Usage

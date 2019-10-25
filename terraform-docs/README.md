@@ -6,7 +6,7 @@
 
 
 <div align="left">
-    <img src="../figures/terraform-docs.png" alt="drawing" width="600"/>
+    <img src="https://raw.githubusercontent.com/binbashar/public-docker-images/master/figures/terraform-docs.png" alt="drawing" width="600"/>
 </div>
 
 ## Docker Usage
