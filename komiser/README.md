@@ -41,7 +41,7 @@ option flag in order to get multiple AWS account access.
 1. docker `komiser` w/ `redis` run
 ```bash
 ╭─delivery at delivery-I7567 in ~/Binbash/repos/BB-Leverage/docker/public-docker-images/komiser on BBL-137-docker-scoutsuite-awscli-komiser✘✘✘ using ‹› 19-10-24 - 20:44:33
-╰─○ make test-run-docker-komiser
+╰─○ make test-run-docker-komiser-redis
 docker network create -d bridge nw-komiser-redis
 b8ea13e3a82a284177139f86fa9997f98b6e3a297fc8328e03d52ce977157038
 docker run -d --name komiser-redis -p 6379:6379 --network nw-komiser-redis redis:5.0.6
@@ -81,7 +81,7 @@ make[1]: Leaving directory '/home/delivery/Binbash/repos/BB-Leverage/docker/publ
 2. docker `komiser` w/ `redis` stop
 ```bash
 ╭─delivery at delivery-I7567 in ~/Binbash/repos/BB-Leverage/docker/public-docker-images/komiser on BBL-137-docker-scoutsuite-awscli-komiser✘✘✘ using ‹› 19-10-24 - 20:44:40
-╰─○ make test-stop-docker-komiser
+╰─○ make test-stop-docker-komiser-redis
 docker stop komiser komiser-redis
 komiser
 komiser-redis
@@ -97,7 +97,7 @@ nw-komiser-redis
 1. docker-compose `komiser` w/ `redis` run
 ```bash
 ╭─delivery at delivery-I7567 in ~/Binbash/repos/BB-Leverage/docker/public-docker-images/komiser on BBL-137-docker-scoutsuite-awscli-komiser✘✘✘ using ‹› 19-10-24 - 20:46:56
-╰─○ make test-run-docker-compose-komiser
+╰─○ make test-run-docker-compose-komiser-redis
 docker-compose up -d
 Creating redis ... done
 Creating komiser ... done
@@ -127,7 +127,7 @@ make[1]: Leaving directory '/home/delivery/Binbash/repos/BB-Leverage/docker/publ
 2. docker-compose `komiser` w/ `redis` stop
 ```bash
 ╭─delivery at delivery-I7567 in ~/Binbash/repos/BB-Leverage/docker/public-docker-images/komiser on BBL-137-docker-scoutsuite-awscli-komiser✘✘✘ using ‹› 19-10-24 - 20:47:05
-╰─○ make test-stop-docker-compose-komiser
+╰─○ make test-stop-docker-compose-komiser-redis
 docker-compose stop
 Stopping komiser ... done
 Stopping redis   ... done
