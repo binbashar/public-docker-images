@@ -1,5 +1,5 @@
 .PHONY: build
-DOCKER_TAG = 0.0.1
+DOCKER_TAG = 0.3.2
 DOCKER_IMG_NAME = terraform-landscape
 
 help:
