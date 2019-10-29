@@ -61,7 +61,6 @@ Scout Suite 5.4.0
 docker run -it --rm --name sec-scoutsuite -v ~/.aws:/root/.aws -v ~/scoutsuite-report:/report/scoutsuite-report -e "AWS_DEFAULT_REGION=us-east-1" binbash/sec-scoutsuite:5.4.0 -v
 Scout Suite 5.4.0
 docker run -it --rm --name sec-scoutsuite -v ~/.aws:/root/.aws -v ~/scoutsuite-report:/report/scoutsuite-report -e "AWS_DEFAULT_REGION=us-east-1" binbash/sec-scoutsuite:5.4.0 aws --force --regions us-east-1 --profile flex-lmb
-
 2019-10-24 15:21:01 8bfe1c92cd7a scout[1] INFO Launching Scout
 2019-10-24 15:21:01 8bfe1c92cd7a scout[1] INFO Authenticating to cloud provider
 2019-10-24 15:21:04 8bfe1c92cd7a scout[1] INFO Gathering data from APIs

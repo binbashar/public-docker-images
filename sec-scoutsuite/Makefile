@@ -8,7 +8,7 @@ LOCAL_OS_AWS_CONF_DIR := ~/.aws
 LOCAL_OS_AWS_SCOUT_REPORT := ~/scoutsuite-report
 
 AWS_REGION := us-east-1
-AWS_IAM_PROFILE := flex-lmb
+AWS_IAM_PROFILE := default
 
 define SCOUTSUITE_CMD_PREFIX
 docker run -it --rm \
