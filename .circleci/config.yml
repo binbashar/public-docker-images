@@ -41,7 +41,7 @@ jobs:
 #
 workflows:
   version: 2
-  changelog_and_release:
+  test_and_release:
     jobs:
       - release-patch-with-changelog:
           context: binbashar-org-global-context
