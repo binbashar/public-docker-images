@@ -1,5 +1,6 @@
 .PHONY: build
-DOCKER_TAG = 0.12.12
+DOCKER_TAG = 0.12.20
+DOCKER_TAG_TF_0.11 = 0.11.14
 
 help:
 	@echo 'Available Commands:'
@@ -12,20 +13,20 @@ build-no-cache: ## build docker image no cache
 	docker build --no-cache -t binbash/terraform-resources:${DOCKER_TAG} -t binbash/terraform-resources:latest --build-arg TERRAFORM_VERSION='${DOCKER_TAG}' .
 
 run-go-version: ## docker run go version
-	docker run -it --rm binbash/terraform-resources:0.11.14 version
-	docker run -it --rm binbash/terraform-resources:0.12.12 version
+	docker run -it --rm binbash/terraform-resources:${DOCKER_TAG_TF_0.11} version
+	docker run -it --rm binbash/terraform-resources:${DOCKER_TAG} version
 
 run-go-env: ## docker run go env
-	docker run -it --rm binbash/terraform-resources:0.11.14 env
-	docker run -it --rm binbash/terraform-resources:0.12.12 env
+	docker run -it --rm binbash/terraform-resources:${DOCKER_TAG_TF_0.11} env
+	docker run -it --rm binbash/terraform-resources:${DOCKER_TAG} env
 
 run-dep-version: ## docker run dep version
-	docker run -it --rm --entrypoint=dep binbash/terraform-resources:0.11.14 version
-	docker run -it --rm --entrypoint=dep binbash/terraform-resources:0.12.12 version
+	docker run -it --rm --entrypoint=dep binbash/terraform-resources:${DOCKER_TAG_TF_0.11} version
+	docker run -it --rm --entrypoint=dep binbash/terraform-resources:${DOCKER_TAG} version
 
 run-terraform-version: ## docker run terraform --version
-	docker run -it --rm --entrypoint=/usr/local/go/bin/terraform binbash/terraform-resources:0.11.14 --version
-	docker run -it --rm --entrypoint=/usr/local/go/bin/terraform binbash/terraform-resources:0.12.12 --version
+	docker run -it --rm --entrypoint=/usr/local/go/bin/terraform binbash/terraform-resources:${DOCKER_TAG_TF_0.11} --version
+	docker run -it --rm --entrypoint=/usr/local/go/bin/terraform binbash/terraform-resources:${DOCKER_TAG} --version
 
 push: ## push docker image to registry
 	docker push binbash/terraform-resources:${DOCKER_TAG}  && docker push binbash/terraform-resources:latest
