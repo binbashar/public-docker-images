@@ -74,15 +74,3 @@ yarn run serve
 docker build -t binbashcomar:release --target prd .
 ```
 
-# Release Management
-### CircleCi PR auto-release job
-
-<div align="left">
-  <img src="./%40figures/circleci-logo.png" alt="circleci" width="130"/>
-</div>
-
-- [**pipeline-job**](https://circleci.com/gh/binbashar/binbash.com.ar) (**NOTE:** Will only run after merged PR)
-- [**releases**](https://github.com/binbashar/binbash.com.ar/releases) 
-- [**changelog**](https://github.com/binbashar/binbash.com.ar/blob/master/CHANGELOG.md) 
-
-

@@ -1,7 +1,4 @@
 .PHONY: build
-DOCKER_TAG = 0.0.1
-DOCKER_IMG_NAME = vuejs-vuetify
-DOCKER_UP_SLEEP = "5"
 
 help:
 	@echo 'Available Commands:'
@@ -11,10 +8,19 @@ help:
 # docker build & push
 #
 build: ## build docker image
-	docker build -t binbash/${DOCKER_IMG_NAME}:${DOCKER_TAG} -t binbash/${DOCKER_IMG_NAME}:latest --build-arg TERRAFORM_VERSION='${DOCKER_TAG}' .
+	cd example-test && make build
 
 build-no-cache: ## build docker image no cache
-	docker build --no-cache -t binbash/${DOCKER_IMG_NAME}:${DOCKER_TAG} -t binbash/${DOCKER_IMG_NAME}:latest --build-arg TERRAFORM_VERSION='${DOCKER_TAG}' .
+	cd example-test && make build-no-cache
 
 push: ## push docker image to registry
-	docker push binbash/${DOCKER_IMG_NAME}:${DOCKER_TAG}  && docker push binbash/${DOCKER_IMG_NAME}:latest
+	cd example-test && make push
+
+#
+# docker run tests
+#
+test-yarn-run-serve: ## docker run yarn serve
+	cd example-test && make test-yarn-run-serve
+
+test-yarn-build-nginx: ## docker run yarn build + nginx container
+	cd example-test && make test-yarn-build-nginx
