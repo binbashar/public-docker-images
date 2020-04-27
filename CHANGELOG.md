@@ -7,6 +7,13 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.0.14"></a>
+## [v0.0.14] - 2020-04-27
+
+- BBL-248 removing terraform-docs from README.md
+- BBL-248 removing terraform-docs since we're using cytopia/terraform-docs image for this purpose
+
+
 <a name="v0.0.13"></a>
 ## [v0.0.13] - 2020-04-24
 
@@ -150,7 +157,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/public-docker-images/compare/v0.0.13...HEAD
+[Unreleased]: https://github.com/binbashar/public-docker-images/compare/v0.0.14...HEAD
+[v0.0.14]: https://github.com/binbashar/public-docker-images/compare/v0.0.13...v0.0.14
 [v0.0.13]: https://github.com/binbashar/public-docker-images/compare/v0.0.12...v0.0.13
 [v0.0.12]: https://github.com/binbashar/public-docker-images/compare/v0.0.11...v0.0.12
 [v0.0.11]: https://github.com/binbashar/public-docker-images/compare/v0.0.10...v0.0.11
