@@ -1,4 +1,4 @@
-FROM binbash/terraform-resources:0.12.24
+FROM binbash/terraform-resources:0.12.28
 
 MAINTAINER Binbash Leverage (info@binbash.com.ar)
 

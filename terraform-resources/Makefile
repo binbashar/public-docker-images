@@ -1,5 +1,5 @@
 .PHONY: build
-DOCKER_TAG = 0.12.24
+DOCKER_TAG = 0.12.28
 DOCKER_TAG_TF_0.11 = 0.11.14
 DOCKER_IMG_NAME = terraform-resources
 
