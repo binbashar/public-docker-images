@@ -1,5 +1,5 @@
 .PHONY: build
-DOCKER_TAG = 0.12.24
+DOCKER_TAG = 0.12.28
 DOCKER_IMG_NAME = terraform-awscli
 
 LOCAL_OS_USER := $(shell whoami)
@@ -38,7 +38,7 @@ build-no-cache: ## build docker image no cache
 	docker build --no-cache -t binbash/${DOCKER_IMG_NAME}:${DOCKER_TAG} -t binbash/${DOCKER_IMG_NAME}:latest --build-arg TERRAFORM_VERSION='${DOCKER_TAG}' .
 
 push: ## push docker image to registry
-	docker push binbash/${DOCKER_IMG_NAME}:${DOCKER_TAG}  && docker push binbash/${DOCKER_IMG_NAME}:latest
+	docker push binbash/${DOCKER_IMG_NAME}:${DOCKER_TAG} && docker push binbash/${DOCKER_IMG_NAME}:latest
 
 #
 # docker run tests
