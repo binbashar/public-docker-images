@@ -1,0 +1,196 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+
+<a name="unreleased"></a>
+## [Unreleased]
+
+
+
+<a name="v0.0.17"></a>
+## [v0.0.17] - 2020-07-10
+
+- BBL-167 seting terraform-awscli image to use python3.8
+
+
+<a name="v0.0.16"></a>
+## [v0.0.16] - 2020-07-07
+
+- BBL-248 small sintaxt improvement
+- BBL-248 supporting latest terraform 0.12.28 version
+- BBL-248 propagating Makefile grep string update
+
+
+<a name="v0.0.15"></a>
+## [v0.0.15] - 2020-06-09
+
+- Bump websocket-extensions in /vuejs-vuetify/example-test
+
+
+<a name="v0.0.14"></a>
+## [v0.0.14] - 2020-04-27
+
+- BBL-248 removing terraform-docs from README.md
+- BBL-248 removing terraform-docs since we're using cytopia/terraform-docs image for this purpose
+
+
+<a name="v0.0.13"></a>
+## [v0.0.13] - 2020-04-24
+
+- BBL-248 improving directory structure to make this layer easier to understand and following the std
+- BBL-248 improving directory structure to make this layer easier to understand and following the std
+- BBL-248 adding vuejs-vuetify dockerfile and related files
+- BBL-248 updating .gitignore
+- BLL-248 adding .github repo templates
+- BBL-248 updating release mgmt README.md section
+- BBL-248 updating terraform-resource makefile
+- BBL-248 Adding terraform-awscli dockerfile
+- BBL-248 Makefile.release updated
+- BBL-248 updating changelog format
+
+
+<a name="v0.0.12"></a>
+## [v0.0.12] - 2020-01-27
+
+- BBL-80 Updating Makefile: parametrized version + latest tf 0.12.20
+
+
+<a name="v0.0.11"></a>
+## [v0.0.11] - 2019-10-29
+
+- BBL-137 minor code enhancement updates
+
+
+<a name="v0.0.10"></a>
+## [v0.0.10] - 2019-10-25
+
+- BBL-137 adding komiser without redis in Makefile
+- BBL-137 updating mysql-client docker image readme.md
+
+
+<a name="v0.0.9"></a>
+## [v0.0.9] - 2019-10-25
+
+- BBL-137 fixing sec-scoutsuit https://cloud.docker.com/u/binbash/repository/docker/binbash/sec-scoutsuite/builds/3c807e01-efc1-4950-b0c7-15ee57fdb7e0
+- BBL-137 fixing https://cloud.docker.com/u/binbash/repository/docker/binbash/terraform-landscape/builds/bc2e964a-ec01-4f7e-b85a-f09af6b7bf0a
+- BBL-137 fixing https://cloud.docker.com/u/binbash/repository/docker/binbash/mysql-client/builds/e8ba3906-d472-407c-9b99-c5b09c5e0328
+- BBL-137 updating README.md images size for an improved view.
+- BBL-137 updating README.md images size for an improved view.
+
+
+<a name="v0.0.8"></a>
+## [v0.0.8] - 2019-10-25
+
+- BBL-137 flag to false for better code sintaxt
+- BBL-137 adding awscli and scoutsuite image status in readme.md
+- BBL-137 adding inline comment komiser makefile
+- BBL-137 adding Makefile and docker-compose.yml for komiser w/ redis auto exec
+- BBL-137 kubectl readme.md update + adding maintainer to kubectx dockerfile
+- BBL-137 adding docker scoutsuite files
+- BBL-137 adding docker awscli files
+- BBL-137 adding maintainer info to every Dockerfile
+
+
+<a name="v0.0.7"></a>
+## [v0.0.7] - 2019-10-22
+
+- BBL-119 disabling circleci docker cache not available for our current plan
+- BBL-119 adding CircleCi automated release mgmt code
+- BBL-119 referencing terraform to 0.12.12
+
+
+<a name="v0.0.6"></a>
+## [v0.0.6] - 2019-08-24
+
+- Updating CHANGELOG.md via make changelog-patch for v0.0.6
+- BBL-101 updating mysql-client based image version to a fix one
+
+
+<a name="v0.0.5"></a>
+## [v0.0.5] - 2019-08-21
+
+- Updating CHANGELOG.md via make changelog-patch for v0.0.5
+- BBL-95 udpating kubectl readmme.md
+- BBL-95 dockerfile, makefile and readme.md updates for both kubectl and kubectx
+- BBL-95 updating README.mds
+- adding dockerized k8s kubectx and kubenx
+- adding dockerized k8s kubectl
+
+
+<a name="v0.0.4"></a>
+## [v0.0.4] - 2019-07-12
+
+- Adding CHANGELOG.md for v0.0.4
+- updating figures url by github raw endpoint in order to let README.md images to be publicly accesible by docker-hub and tf-registry among others
+- fixing public figure url
+- Updating terraform-resources Makefile in order to test different binaries
+- fixing figures url
+- adding CHANGELOG.md with new release semtag v0.0.3
+
+
+<a name="v0.0.3"></a>
+## [v0.0.3] - 2019-07-05
+
+- adding -o flag to generate changelog based on next release tag
+- Makefile update for git-chglog patch, minor, major CHANGELOG.md generation support.
+- makefile indentation update
+- Updating Makefile to support git-release tagging patch, minor and major semtags.
+- readme code block indentation
+- Updating readme.mds
+- Adding new git-release docker file w/ git-chglog and semtag support
+- Set theme jekyll-theme-slate
+- BBL-33 updating main readme.md with terraform doc docker cloud build ref
+- BBL-33 terraform-docs binbash image related files
+
+
+<a name="v0.0.2"></a>
+## [v0.0.2] - 2019-05-16
+
+- BBL-74 fixing alpine version to 3.8.4
+- BBL-74 several README.md updates
+- BBL-74 terraform-landscape docker files added
+- updating mysql-client community version pkg
+- BBL-64 adding missing # char for makefiles autohelp comments
+- BBL-64 updating makefiles to be self documented
+- BBL-64 updating docker-compose file to it's std name.
+- BBL-64 adding .gitignore and .sql example file for mysql-client docker image tests
+- BBL-64 README.md has been updated with the new mysql-client badge (will take effect after PR and docker hub autobild configs update)
+- BBL-64 adding mysql-client 5.6,5.7 and 8.0 compatible to be reference in the jenkins-module documentation.
+- BBL-64 adding jenkins local testing env related files to be referenced in the jenkins-modules README.md
+- Merge branch 'master' into 39-dockerize-terraform
+- BBL-39 jenkins image readme update
+- BBL-39 jenkins image readme minor update
+- BBL-39 jenkins image readme update
+- BBL-39 README.md updated with badges.
+- BBL-39 php7.1-composer dockerfiles added (cloud.docker.com autobuild pending) - wp_provision image to be deprecated in favor of this image.
+- BBL-39 Jenkins dockerfile and its dependencies added (cloud.docker.com autobuild pending)
+- BBL-39 terraform related files updated to use DOCKER_TAG env var in order to simplfy the automated cloud build
+- Update docker file to adapt it our testing flow.
+
+
+<a name="v0.0.1"></a>
+## v0.0.1 - 2019-04-24
+
+- Add build hook for docker cloud. ([#3](https://github.com/binbashar/public-docker-images/issues/3))
+- Update docker file to adapt it our testing flow. ([#2](https://github.com/binbashar/public-docker-images/issues/2))
+- Dockerize terraform and terratest. ([#1](https://github.com/binbashar/public-docker-images/issues/1))
+- Initial commit
+
+
+[Unreleased]: https://github.com/binbashar/public-docker-images/compare/v0.0.17...HEAD
+[v0.0.17]: https://github.com/binbashar/public-docker-images/compare/v0.0.16...v0.0.17
+[v0.0.16]: https://github.com/binbashar/public-docker-images/compare/v0.0.15...v0.0.16
+[v0.0.15]: https://github.com/binbashar/public-docker-images/compare/v0.0.14...v0.0.15
+[v0.0.14]: https://github.com/binbashar/public-docker-images/compare/v0.0.13...v0.0.14
+[v0.0.13]: https://github.com/binbashar/public-docker-images/compare/v0.0.12...v0.0.13
+[v0.0.12]: https://github.com/binbashar/public-docker-images/compare/v0.0.11...v0.0.12
+[v0.0.11]: https://github.com/binbashar/public-docker-images/compare/v0.0.10...v0.0.11
+[v0.0.10]: https://github.com/binbashar/public-docker-images/compare/v0.0.9...v0.0.10
+[v0.0.9]: https://github.com/binbashar/public-docker-images/compare/v0.0.8...v0.0.9
+[v0.0.8]: https://github.com/binbashar/public-docker-images/compare/v0.0.7...v0.0.8
+[v0.0.7]: https://github.com/binbashar/public-docker-images/compare/v0.0.6...v0.0.7
+[v0.0.6]: https://github.com/binbashar/public-docker-images/compare/v0.0.5...v0.0.6
+[v0.0.5]: https://github.com/binbashar/public-docker-images/compare/v0.0.4...v0.0.5
+[v0.0.4]: https://github.com/binbashar/public-docker-images/compare/v0.0.3...v0.0.4
+[v0.0.3]: https://github.com/binbashar/public-docker-images/compare/v0.0.2...v0.0.3
+[v0.0.2]: https://github.com/binbashar/public-docker-images/compare/v0.0.1...v0.0.2
