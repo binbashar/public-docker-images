@@ -3,7 +3,7 @@ FROM hashicorp/terraform:${TERRAFORM_VERSION}
 
 LABEL vendor="Binbash Leverage (info@binbash.com.ar)"
 
-ARG AWSCLI_VERSION
+ARG AWSCLI_VERSION=1.18.126
 
 # Install python3 and other useful dependencies
 RUN apk update
