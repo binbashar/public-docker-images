@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#
+# Ref: https://docs.docker.com/docker-hub/builds/advanced/
+#
+echo "------ HOOK START - BUILD -------"
+printenv
+
+docker build -t $IMAGE_NAME --build-arg TERRAFORM_VERSION=$DOCKER_TAG .
+
+echo "------ HOOK END - BUILD -------"
