@@ -17,6 +17,7 @@ RUN set -ex && \
         tree \
         tzdata \
         jq \
+        oath-toolkit-oathtool \
         python3
 RUN rm /var/cache/apk/*
 
