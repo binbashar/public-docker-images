@@ -1,4 +1,4 @@
-ARG TERRAFORM_VERSION=0.13.0
+ARG TERRAFORM_VERSION=0.13.2
 FROM binbash/terraform-awscli-slim:${TERRAFORM_VERSION}
 
 LABEL vendor="Binbash Leverage (info@binbash.com.ar)"

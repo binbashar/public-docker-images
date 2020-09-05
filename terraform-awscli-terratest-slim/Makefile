@@ -1,6 +1,6 @@
 .PHONY: build
 DOCKER_IMG_NAME = terraform-awscli-terratest-slim
-DOCKER_IMG_TAG = 0.13.0
+DOCKER_IMG_TAG = 0.13.2
 
 help:
 	@echo 'Available Commands:'
