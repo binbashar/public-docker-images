@@ -7,6 +7,12 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.0.25"></a>
+## [v0.0.25] - 2020-09-06
+
+- Update Terraform Slim images to use Terraform 0.13.2 as default ([#42](https://github.com/binbashar/public-docker-images/issues/42))
+
+
 <a name="v0.0.24"></a>
 ## [v0.0.24] - 2020-09-03
 
@@ -220,7 +226,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/public-docker-images/compare/v0.0.24...HEAD
+[Unreleased]: https://github.com/binbashar/public-docker-images/compare/v0.0.25...HEAD
+[v0.0.25]: https://github.com/binbashar/public-docker-images/compare/v0.0.24...v0.0.25
 [v0.0.24]: https://github.com/binbashar/public-docker-images/compare/v0.0.23...v0.0.24
 [v0.0.23]: https://github.com/binbashar/public-docker-images/compare/v0.0.22...v0.0.23
 [v0.0.22]: https://github.com/binbashar/public-docker-images/compare/v0.0.21...v0.0.22
