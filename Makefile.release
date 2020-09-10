@@ -18,9 +18,9 @@ docker run --rm \
 -it binbash/git-release
 endef
 
-GIT_SEMTAG_VER_PATCH := $(shell ${GIT_SEMTAG_CMD_PREFIX} final -s patch -o)
-GIT_SEMTAG_VER_MINOR := $(shell ${GIT_SEMTAG_CMD_PREFIX} final -s minor -o)
-GIT_SEMTAG_VER_MAJOR := $(shell ${GIT_SEMTAG_CMD_PREFIX} final -s major -o)
+GIT_SEMTAG_VER_PATCH := $(shell ${GIT_SEMTAG_CMD_PREFIX} final -s patch -o | grep -v 'Warning: Permanently added the RSA host key for IP address')
+GIT_SEMTAG_VER_MINOR := $(shell ${GIT_SEMTAG_CMD_PREFIX} final -s minor -o | grep -v 'Warning: Permanently added the RSA host key for IP address')
+GIT_SEMTAG_VER_MAJOR := $(shell ${GIT_SEMTAG_CMD_PREFIX} final -s major -o | grep -v 'Warning: Permanently added the RSA host key for IP address')
 
 help:
 	@echo 'Available Commands:'
@@ -152,24 +152,21 @@ changelog-init: ## git-chglog (https://github.com/git-chglog/git-chglog) config 
 
 changelog-patch: ## git-chglog generation for path release
 	docker run --rm -v ${LOCAL_PWD_DIR}:/data \
-	-it binbash/git-release -o CHANGELOG.md --next-tag ${GIT_SEMTAG_VER_PATCH} \
-	| grep -v 'Warning: Permanently added the RSA host key for IP address'
+	-it binbash/git-release -o CHANGELOG.md --next-tag ${GIT_SEMTAG_VER_PATCH}
 	sudo chown -R ${LOCAL_OS_USER}:${LOCAL_OS_USER} ./.chglog
 	sudo chown -R ${LOCAL_OS_USER}:${LOCAL_OS_USER} ./.git
 	sudo chown -R ${LOCAL_OS_USER}:${LOCAL_OS_USER} ./CHANGELOG.md
 
 changelog-minor: ## git-chglog generation for minor release
 	docker run --rm -v ${LOCAL_PWD_DIR}:/data -it \
-	binbash/git-release -o CHANGELOG.md --next-tag ${GIT_SEMTAG_VER_MINOR} \
-	| grep -v 'Warning: Permanently added the RSA host key for IP address'
+	binbash/git-release -o CHANGELOG.md --next-tag ${GIT_SEMTAG_VER_MINOR}
 	sudo chown -R ${LOCAL_OS_USER}:${LOCAL_OS_USER} ./.chglog
 	sudo chown -R ${LOCAL_OS_USER}:${LOCAL_OS_USER} ./.git
 	sudo chown -R ${LOCAL_OS_USER}:${LOCAL_OS_USER} ./CHANGELOG.md
 
 changelog-major: ## git-chglog generation for major release
 	docker run --rm -v ${LOCAL_PWD_DIR}:/data -it \
-	binbash/git-release -o CHANGELOG.md --next-tag ${GIT_SEMTAG_VER_MAJOR} \
-	| grep -v 'Warning: Permanently added the RSA host key for IP address'
+	binbash/git-release -o CHANGELOG.md --next-tag ${GIT_SEMTAG_VER_MAJOR}
 	sudo chown -R ${LOCAL_OS_USER}:${LOCAL_OS_USER} ./.chglog
 	sudo chown -R ${LOCAL_OS_USER}:${LOCAL_OS_USER} ./.git
 	sudo chown -R ${LOCAL_OS_USER}:${LOCAL_OS_USER} ./CHANGELOG.md
