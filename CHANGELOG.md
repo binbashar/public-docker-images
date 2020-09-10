@@ -7,6 +7,12 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.0.26"></a>
+## [v0.0.26] - 2020-09-10
+
+- BBL-379 | fixing Failed: binbashar/public-docker-images on master / test_and_release
+
+
 <a name="v0.0.25"></a>
 ## [v0.0.25] - 2020-09-06
 
@@ -226,7 +232,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/public-docker-images/compare/v0.0.25...HEAD
+[Unreleased]: https://github.com/binbashar/public-docker-images/compare/v0.0.26...HEAD
+[v0.0.26]: https://github.com/binbashar/public-docker-images/compare/v0.0.25...v0.0.26
 [v0.0.25]: https://github.com/binbashar/public-docker-images/compare/v0.0.24...v0.0.25
 [v0.0.24]: https://github.com/binbashar/public-docker-images/compare/v0.0.23...v0.0.24
 [v0.0.23]: https://github.com/binbashar/public-docker-images/compare/v0.0.22...v0.0.23
