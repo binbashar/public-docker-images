@@ -7,6 +7,12 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.0.28"></a>
+## [v0.0.28] - 2020-09-11
+
+- BBL-381 | minor readme figures sizeing improvement
+
+
 <a name="v0.0.27"></a>
 ## [v0.0.27] - 2020-09-11
 
@@ -242,7 +248,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/public-docker-images/compare/v0.0.27...HEAD
+[Unreleased]: https://github.com/binbashar/public-docker-images/compare/v0.0.28...HEAD
+[v0.0.28]: https://github.com/binbashar/public-docker-images/compare/v0.0.27...v0.0.28
 [v0.0.27]: https://github.com/binbashar/public-docker-images/compare/v0.0.26...v0.0.27
 [v0.0.26]: https://github.com/binbashar/public-docker-images/compare/v0.0.25...v0.0.26
 [v0.0.25]: https://github.com/binbashar/public-docker-images/compare/v0.0.24...v0.0.25
