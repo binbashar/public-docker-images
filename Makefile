@@ -1,5 +1,7 @@
 .PHONY: help
-SHELL := /bin/bash
+SHELL         := /bin/bash
+MAKEFILE_PATH := ./Makefile
+MAKEFILES_DIR := ./@bin/makefiles
 
 help:
 	@echo 'Available Commands:'
@@ -7,11 +9,11 @@ help:
 
 
 init-makefiles: ## initialize makefiles
-	rm -rf ./@bin/makefiles
-	mkdir -p ./@bin/makefiles
-	git clone https://github.com/binbashar/le-dev-makefiles.git ./@bin/makefiles/
-	echo "" >> ./Makefile
-	sed -i '/^#include.*/s/^#//' ./Makefile
+	rm -rf ${MAKEFILES_DIR}
+	mkdir -p ${MAKEFILES_DIR}
+	git clone https://github.com/binbashar/le-dev-makefiles.git ${MAKEFILES_DIR}
+	echo "" >> ${MAKEFILE_PATH}
+	sed -i '/^#include.*/s/^#//' ${MAKEFILE_PATH}
 
 #
 ## IMPORTANT: Automatically managed -> don't uncomment this line
