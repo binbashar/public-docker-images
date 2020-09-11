@@ -83,4 +83,5 @@ Thumbs.db
 
 # Docker Project specific files #
 #################################
+/@bin
 !/mysql-client/example-test/create_table.sql
