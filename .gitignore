@@ -81,7 +81,7 @@ Thumbs.db
 *.pgpass
 *.vagrant
 
-# Docker Project specific files #
+# Project specific files #
 #################################
 /@bin
 !/mysql-client/example-test/create_table.sql
