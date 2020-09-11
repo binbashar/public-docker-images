@@ -1,8 +1,8 @@
 <div align="center">
-    <img src="https://raw.githubusercontent.com/binbashar/public-docker-images/master/figures/binbash.png" alt="drawing" width="350"/>
+    <img src="https://raw.githubusercontent.com/binbashar/public-docker-images/master/figures/binbash.png" alt="drawing" width="250"/>
 </div>
 <div align="right">
-  <img src="https://raw.githubusercontent.com/binbashar/public-docker-images/master/figures/binbash-leverage-docker.png" alt="leverage" width="230"/>
+  <img src="https://raw.githubusercontent.com/binbashar/public-docker-images/master/figures/binbash-leverage-docker.png" alt="leverage" width="130"/>
 </div>
 
 # public-docker-images
@@ -43,7 +43,7 @@
 
 ### CircleCi PR auto-release job
 <div align="left">
-  <img src="https://raw.githubusercontent.com/binbashar/public-docker-images/master/figures/circleci.png" alt="leverage-circleci" width="230"/>
+  <img src="https://raw.githubusercontent.com/binbashar/public-docker-images/master/figures/circleci.png" alt="leverage-circleci" width="130"/>
 </div>
 
 - [**pipeline-job**](https://app.circleci.com/pipelines/github/binbashar/public-docker-images) (**NOTE:** Will only run after merged PR)
