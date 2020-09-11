@@ -7,6 +7,12 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.0.29"></a>
+## [v0.0.29] - 2020-09-11
+
+- BBL-381 | minor Makefile parameterizing improvement
+
+
 <a name="v0.0.28"></a>
 ## [v0.0.28] - 2020-09-11
 
@@ -248,7 +254,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/public-docker-images/compare/v0.0.28...HEAD
+[Unreleased]: https://github.com/binbashar/public-docker-images/compare/v0.0.29...HEAD
+[v0.0.29]: https://github.com/binbashar/public-docker-images/compare/v0.0.28...v0.0.29
 [v0.0.28]: https://github.com/binbashar/public-docker-images/compare/v0.0.27...v0.0.28
 [v0.0.27]: https://github.com/binbashar/public-docker-images/compare/v0.0.26...v0.0.27
 [v0.0.26]: https://github.com/binbashar/public-docker-images/compare/v0.0.25...v0.0.26
