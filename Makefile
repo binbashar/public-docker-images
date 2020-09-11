@@ -21,5 +21,5 @@ init-makefiles: ## initialize makefiles
 ## IMPORTANT: Automatically managed
 ## Must NOT UNCOMMENT the #include lines below
 #
-#include ./@bin/makefiles/circleci/circleci.mk
-#include ./@bin/makefiles/release-mgmt/release.mk
+#include ${MAKEFILES_DIR}/circleci/circleci.mk
+#include ${MAKEFILES_DIR}/release-mgmt/release.mk
