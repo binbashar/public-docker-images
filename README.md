@@ -39,8 +39,6 @@
 | `terraform-resources` |[![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/binbash/terraform-resources.svg)](https://cloud.docker.com/u/binbash/repository/docker/binbash/terraform-resources/general) [![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/binbash/terraform-resources.svg)](https://cloud.docker.com/u/binbash/repository/docker/binbash/terraform-resources/builds)|
 
 # Release Management
-
-
 ### CircleCi PR auto-release job
 <div align="left">
   <img src="https://raw.githubusercontent.com/binbashar/public-docker-images/master/figures/circleci.png" alt="leverage-circleci" width="130"/>
