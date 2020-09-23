@@ -13,7 +13,7 @@ MAINTAINER Binbash Leverage (info@binbash.com.ar)
 ARG K8S_VERSION
 
 ENV K8S_VERSION $K8S_VERSION
-ENV VERSION "0.6.3"
+ENV VERSION "0.9.1"
 
 #
 # Installation
