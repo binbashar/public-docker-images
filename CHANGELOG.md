@@ -7,6 +7,12 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.0.31"></a>
+## [v0.0.31] - 2020-09-24
+
+- Bump http-proxy from 1.18.0 to 1.18.1 in /vuejs-vuetify/example-test
+
+
 <a name="v0.0.30"></a>
 ## [v0.0.30] - 2020-09-15
 
@@ -260,7 +266,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/public-docker-images/compare/v0.0.30...HEAD
+[Unreleased]: https://github.com/binbashar/public-docker-images/compare/v0.0.31...HEAD
+[v0.0.31]: https://github.com/binbashar/public-docker-images/compare/v0.0.30...v0.0.31
 [v0.0.30]: https://github.com/binbashar/public-docker-images/compare/v0.0.29...v0.0.30
 [v0.0.29]: https://github.com/binbashar/public-docker-images/compare/v0.0.28...v0.0.29
 [v0.0.28]: https://github.com/binbashar/public-docker-images/compare/v0.0.27...v0.0.28
