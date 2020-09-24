@@ -3,7 +3,9 @@
 #DOCKER_TAG := v1.12.10
 #DOCKER_TAG := v1.13.8
 #DOCKER_TAG := v1.14.4
-DOCKER_TAG := v1.15.1
+#DOCKER_TAG := v1.15.1
+#DOCKER_TAG := v1.17.12
+DOCKER_TAG := v1.18.9
 
 LOCAL_OS_KUBE_DIR := ~/.kube
 LOCAL_OS_MINIKUBE_DIR := ~/.minikube
@@ -66,7 +68,7 @@ test-run-kubectl: ## docker run kubectl commands
 	${K8S_KUBECTL_CMD_PREFIX} --context=${K8S_CONTEXT} get pods --namespace=kube-system
 	@echo ''
 	sed -i -e "s/\\/${DOCKER_IMG_USER}/${LOCAL_OS_HOME_DIR_ESCAPED}/g" ${LOCAL_OS_KUBE_DIR}/config
-	
+
 test-run-kubectl-minikube: ## docker run kubectl commands on minikube
 	@echo ''
 	minikube start --profile ${K8S_CONTEXT} --kubernetes-version ${DOCKER_TAG} --vm-driver virtualbox --cpus 4 --memory 12288
