@@ -1,6 +1,5 @@
 .PHONY: build
-DOCKER_TAG = 0.13.0
-DOCKER_TAG_TF_0.11 = 0.11.14
+DOCKER_TAG = 0.13.2
 DOCKER_IMG_NAME = terraform-resources
 
 help:
@@ -23,17 +22,13 @@ push: ## push docker image to registry
 # docker run tests
 #
 run-go-version: ## docker run go version
-	docker run -it --rm binbash/${DOCKER_IMG_NAME}:${DOCKER_TAG_TF_0.11} version
 	docker run -it --rm binbash/${DOCKER_IMG_NAME}:${DOCKER_TAG} version
 
 run-go-env: ## docker run go env
-	docker run -it --rm binbash/${DOCKER_IMG_NAME}:${DOCKER_TAG_TF_0.11} env
 	docker run -it --rm binbash/${DOCKER_IMG_NAME}:${DOCKER_TAG} env
 
 run-dep-version: ## docker run dep version
-	docker run -it --rm --entrypoint=dep binbash/${DOCKER_IMG_NAME}:${DOCKER_TAG_TF_0.11} version
 	docker run -it --rm --entrypoint=dep binbash/${DOCKER_IMG_NAME}:${DOCKER_TAG} version
 
 run-terraform-version: ## docker run terraform --version
-	docker run -it --rm --entrypoint=/usr/local/go/bin/terraform binbash/${DOCKER_IMG_NAME}:${DOCKER_TAG_TF_0.11} --version
 	docker run -it --rm --entrypoint=/usr/local/go/bin/terraform binbash/${DOCKER_IMG_NAME}:${DOCKER_TAG} --version

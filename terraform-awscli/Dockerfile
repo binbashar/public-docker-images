@@ -1,9 +1,9 @@
-FROM binbash/terraform-resources:0.13.0
+FROM binbash/terraform-resources:0.13.2
 
 MAINTAINER Binbash Leverage (info@binbash.com.ar)
 
-ENV AWSCLI_VERSION=1.18.96
-ENV PYTHON_VERSION=3.8.3
+ENV AWSCLI_VERSION=1.18.152
+ENV PYTHON_VERSION=3.8.6
 
 #
 # Pre-requisites: Python 3.8.x
