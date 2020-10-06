@@ -1,5 +1,5 @@
 .PHONY: build
-DOCKER_TAG = 5.4.0
+DOCKER_TAG = 5.9.1
 DOCKER_IMG_NAME = sec-scoutsuite
 DOCKER_REPORT_PATH = /report/scoutsuite-report
 

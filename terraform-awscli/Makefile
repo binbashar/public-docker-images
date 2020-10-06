@@ -1,5 +1,5 @@
 .PHONY: build
-DOCKER_TAG = 0.13.0
+DOCKER_TAG = 0.13.2
 DOCKER_IMG_NAME = terraform-awscli
 
 LOCAL_OS_USER := $(shell whoami)

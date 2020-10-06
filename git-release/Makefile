@@ -1,5 +1,5 @@
 .PHONY: build
-DOCKER_TAG = 0.0.1
+DOCKER_TAG = 0.0.2
 DOCKER_IMG_NAME = git-release
 DOCKER_PWD_DIR := $(shell pwd)
 DOCKER_SEMTAG_CMD := /opt/semtag/semtag/semtag
