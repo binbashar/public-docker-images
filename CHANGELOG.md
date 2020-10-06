@@ -7,6 +7,12 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.0.34"></a>
+## [v0.0.34] - 2020-10-06
+
+- BBL-378 | fixing builds at docker hub and upgrading versions
+
+
 <a name="v0.0.33"></a>
 ## [v0.0.33] - 2020-09-24
 
@@ -278,7 +284,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/public-docker-images/compare/v0.0.33...HEAD
+[Unreleased]: https://github.com/binbashar/public-docker-images/compare/v0.0.34...HEAD
+[v0.0.34]: https://github.com/binbashar/public-docker-images/compare/v0.0.33...v0.0.34
 [v0.0.33]: https://github.com/binbashar/public-docker-images/compare/v0.0.32...v0.0.33
 [v0.0.32]: https://github.com/binbashar/public-docker-images/compare/v0.0.31...v0.0.32
 [v0.0.31]: https://github.com/binbashar/public-docker-images/compare/v0.0.30...v0.0.31
