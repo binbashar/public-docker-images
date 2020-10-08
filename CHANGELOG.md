@@ -7,6 +7,13 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.0.35"></a>
+## [v0.0.35] - 2020-10-08
+
+- BBL-313 | upgrading versions + standalone makefile approach partially implemented
+- BBL-313 | updating makefile to follow improved stand-alone approach + renaming figures folder
+
+
 <a name="v0.0.34"></a>
 ## [v0.0.34] - 2020-10-06
 
@@ -284,7 +291,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/public-docker-images/compare/v0.0.34...HEAD
+[Unreleased]: https://github.com/binbashar/public-docker-images/compare/v0.0.35...HEAD
+[v0.0.35]: https://github.com/binbashar/public-docker-images/compare/v0.0.34...v0.0.35
 [v0.0.34]: https://github.com/binbashar/public-docker-images/compare/v0.0.33...v0.0.34
 [v0.0.33]: https://github.com/binbashar/public-docker-images/compare/v0.0.32...v0.0.33
 [v0.0.32]: https://github.com/binbashar/public-docker-images/compare/v0.0.31...v0.0.32
