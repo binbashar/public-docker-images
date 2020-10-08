@@ -1,5 +1,13 @@
 .PHONY: build
-DOCKER_TAG = 0.0.1
+
+SHELL            := /bin/bash
+MAKEFILE_PATH    := ./Makefile
+MAKEFILES_DIR    := ../@bin/makefiles
+
+DOCKER_TAG       := 0.0.2
+DOCKER_REPO_NAME := binbash
+DOCKER_IMG_NAME  := mysql-client
+
 MYSQ_SQL_FILE = create_table.sql
 MYSQL_PATH_TO_SQL = $(shell pwd)/example-test
 MYSQL_CONT_NQME_5.6 = "example-test_mysql-server-5.6_1"
@@ -19,11 +27,15 @@ help:
 	@echo 'Available Commands:'
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf " - \033[36m%-18s\033[0m %s\n", $$1, $$2}'
 
-build: ## build docker image
-	docker build -t binbash/mysql-client:${DOCKER_TAG} -t binbash/mysql-client:latest .
+#==============================================================#
+# INITIALIZATION                                               #
+#==============================================================#
+init-makefiles: ## initialize makefiles
+	rm -rf ${MAKEFILES_DIR}
+	mkdir -p ${MAKEFILES_DIR}
+	git clone https://github.com/binbashar/le-dev-makefiles.git ${MAKEFILES_DIR}
 
-build-no-cache: ## build docker image no cache
-	docker build --no-cache -t binbash/mysql-client:${DOCKER_TAG} -t binbash/mysql-client:latest .
+-include ${MAKEFILES_DIR}/docker/docker-hub-build-push.mk
 
 test-run-ver: ## run docker image test-1
 	docker run --rm -it binbash/mysql-client:${DOCKER_TAG} -V
@@ -48,5 +60,3 @@ test-run-sql-cmd: ## run docker image test-3
 	docker-compose -f ${MYSQL_PATH_TO_SQL}/docker-compose.yml rm --force
 	docker volume rm example-test_database_data_5.6 example-test_database_data_5.7 example-test_database_data_8.0 --force
 
-push: ## push docker image to registry
-	docker push binbash/mysql-client:${DOCKER_TAG}  && docker push binbash/mysql-client:latest

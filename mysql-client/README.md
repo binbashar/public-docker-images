@@ -3,7 +3,7 @@
 #### Docker image with a MySQL 5.6, 5.7 and 8.0 compatible client.
 
 <div align="left">
-    <img src="https://raw.githubusercontent.com/binbashar/public-docker-images/master/figures/mysql.png" alt="drawing" width="250"/>
+    <img src="https://raw.githubusercontent.com/binbashar/public-docker-images/master/%40doc/figures/mysql.png" alt="drawing" width="250"/>
 </div>
 
 [https://www.mysql.com/](https://www.mysql.com/).

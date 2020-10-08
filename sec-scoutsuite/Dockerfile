@@ -5,10 +5,8 @@ FROM alpine:3.12.0
 
 MAINTAINER Binbash Leverage (info@binbash.com.ar)
 
-# Here SCOUTSUITE_VERSION is coming from the custom build args SCOUTSUITE_VERSION=$DOCKER_TAG hooks/file script.
-# Ref: https://docs.docker.com/docker-hub/builds/advanced/
-ARG SCOUTSUITE_VERSION
-ENV SCOUTSUITE_VERSION $SCOUTSUITE_VERSION
+ARG DOCKER_TAG
+ARG SCOUTSUITE_VERSION=${DOCKER_TAG}
 
 VOLUME ["/report"]
 

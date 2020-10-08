@@ -1,7 +1,7 @@
 # komiser
 
 <div align="left">
-  <img src="https://raw.githubusercontent.com/binbashar/public-docker-images/master/komiser/figures/komiser-logo.png" alt="leverage-circleci" width="120"/>
+  <img src="https://raw.githubusercontent.com/binbashar/public-docker-images/master/komiser/%40doc/figures/komiser-logo.png" alt="leverage-circleci" width="120"/>
 </div>
 
 #### The AWS Command Line Interface (CLI) is a unified tool to manage your AWS services.
@@ -11,7 +11,7 @@ With just one tool to download and configure, you can control multiple AWS servi
 The AWS CLI introduces a new set of simple file commands for efficient file transfers to and from Amazon S3.
 
 <div align="left">
-  <img src="https://raw.githubusercontent.com/binbashar/public-docker-images/master/komiser/figures/komiser-dashboard.png" alt="leverage-circleci" width="1000"/>
+  <img src="https://raw.githubusercontent.com/binbashar/public-docker-images/master/komiser/%40doc/figures/komiser-dashboard.png" alt="leverage-circleci" width="1000"/>
 </div>
 
 **Official Doc Link:**

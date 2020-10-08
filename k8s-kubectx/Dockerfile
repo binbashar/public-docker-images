@@ -1,19 +1,13 @@
+ARG DOCKER_TAG
+ARG K8S_VERSION=${DOCKER_TAG}
+ARG VERSION="0.9.1"
+
 #
 # Set the base image
 #
-FROM binbash/k8s-kubectl:latest
+FROM binbash/k8s-kubectl:${K8S_VERSION}
 
 MAINTAINER Binbash Leverage (info@binbash.com.ar)
-
-#
-# ENV Vars
-#
-# Here K8S_VERSION is coming from the custom build args K8S_VERSION=$DOCKER_TAG hooks/file script.
-# Ref: https://docs.docker.com/docker-hub/builds/advanced/
-ARG K8S_VERSION
-
-ENV K8S_VERSION $K8S_VERSION
-ENV VERSION "0.9.1"
 
 #
 # Installation

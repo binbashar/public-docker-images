@@ -22,7 +22,7 @@ services:
             # Jenkins home volume - configs will persist and be versioned
             - ./docker/jenkins/jenkins_home:/var/jenkins_home
             # Use persistent volume
-            #- jenkins_home_v2:/var/jenkins_home:rw
+            #- jenkins_home:/var/jenkins_home:rw
 
             # CURRENTLY NOT BEING IN USE (only for Linux - not working in Mac/Win).
             # Docker client and Docker Socket are mapped so that docker commands running within the Jenkins (job)
@@ -65,5 +65,5 @@ services:
 # Persistent Volumes
 #============================================#
 volumes:
-    jenkins_home_v2:
+    jenkins_home:
       driver: local
