@@ -1,7 +1,7 @@
 # sec-scoutsuite
 
 <div align="left">
-  <img src="https://raw.githubusercontent.com/binbashar/public-docker-images/master/sec-scoutsuite/figures/scoutsuite-logo.png" alt="leverage-circleci" width="130"/>
+  <img src="https://raw.githubusercontent.com/binbashar/public-docker-images/master/sec-scoutsuite/%40doc/figures/scoutsuite-logo.png" alt="leverage-circleci" width="130"/>
 </div>
 
 #### Scout Suite is an open source multi-cloud security-auditing tool, which enables security posture assessment of cloud environments.
@@ -17,7 +17,7 @@ Scout Suite was designed by security consultants/auditors. It is meant to provid
 - **AWS Audit** https://github.com/nccgroup/ScoutSuite/wiki/Amazon-Web-Services
 
 <div align="left">
-  <img src="https://raw.githubusercontent.com/binbashar/public-docker-images/master/sec-scoutsuite/figures/scoutsuite-dashboard.jpg" alt="leverage-circleci" width="800"/>
+  <img src="https://raw.githubusercontent.com/binbashar/public-docker-images/master/sec-scoutsuite/%40doc/figures/scoutsuite-dashboard.jpg" alt="leverage-circleci" width="800"/>
 </div>
 
 ## Docker Usage

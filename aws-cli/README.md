@@ -1,7 +1,7 @@
 # aws-cli
 
 <div align="left">
-  <img src="https://raw.githubusercontent.com/binbashar/public-docker-images/master/aws-cli/figures/awscli-logo.png" alt="leverage-circleci" width="230"/>
+  <img src="https://raw.githubusercontent.com/binbashar/public-docker-images/master/aws-cli/%40doc/figures/awscli-logo.png" alt="leverage-circleci" width="230"/>
 </div>
 
 #### The AWS Command Line Interface (CLI) is a unified tool to manage your AWS services.

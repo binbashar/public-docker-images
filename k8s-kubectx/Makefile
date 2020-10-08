@@ -1,17 +1,23 @@
 .PHONY: build
-#DOCKER_TAG := v1.11.10
-#DOCKER_TAG := v1.12.10
-#DOCKER_TAG := v1.13.8
-#DOCKER_TAG := v1.14.4
-#DOCKER_TAG := v1.15.1
-#DOCKER_TAG := v1.17.12
-DOCKER_TAG := v1.18.9
+SHELL            := /bin/bash
+MAKEFILE_PATH    := ./Makefile
+MAKEFILES_DIR    := ../@bin/makefiles
+
+define DOCKER_TAG_LIST
+"v1.15.1" \
+"v1.16.13" \
+"v1.17.9" \
+"v1.17.12" \
+"v1.18.9"
+endef
+
+DOCKER_REPO_NAME := binbash
+DOCKER_IMG_NAME  := k8s-kubectx
 
 LOCAL_OS_KUBE_DIR := ~/.kube
 LOCAL_OS_MINIKUBE_DIR := ~/.minikube
 LOCAL_OS_USER := $(shell whoami)
 LOCAL_OS_HOME_DIR_ESCAPED := \\/home\\/${LOCAL_OS_USER}
-DOCKER_IMG_NAME = k8s-kubectx
 DOCKER_IMG_USER = root
 K8S_CONTEXT := minikube-${DOCKER_TAG}
 K8S_KUBECTL_CONFIG_FILE_NAME := config
@@ -61,11 +67,15 @@ help:
 	@echo 'Available Commands:'
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf " - \033[36m%-18s\033[0m %s\n", $$1, $$2}'
 
-build: ## build docker image
-	docker build -t binbash/${DOCKER_IMG_NAME}:${DOCKER_TAG} -t binbash/${DOCKER_IMG_NAME}:latest --build-arg K8S_VERSION='${DOCKER_TAG}' .
+#==============================================================#
+# INITIALIZATION                                               #
+#==============================================================#
+init-makefiles: ## initialize makefiles
+	rm -rf ${MAKEFILES_DIR}
+	mkdir -p ${MAKEFILES_DIR}
+	git clone https://github.com/binbashar/le-dev-makefiles.git ${MAKEFILES_DIR}
 
-build-no-cache: ## build docker image no cache
-	docker build --no-cache -t binbash/${DOCKER_IMG_NAME}:${DOCKER_TAG} -t binbash/${DOCKER_IMG_NAME}:latest --build-arg K8S_VERSION='${DOCKER_TAG}' .
+-include ${MAKEFILES_DIR}/docker/docker-hub-build-push-tag-list-single-arg.mk
 
 test-run-kubectx-bash: ## docker run bash
 	@echo ''
@@ -159,6 +169,3 @@ test-run-kubectl-kubectx-minikube: ## docker run kubectl, kubectx and kubens cmd
 
 test-run-kubectl-minikube-delete: # deletes testing minikube cluster
 	minikube delete --profile ${K8S_CONTEXT}
-
-push: ## push docker image to registry
-	docker push binbash/${DOCKER_IMG_NAME}:${DOCKER_TAG}  && docker push binbash/${DOCKER_IMG_NAME}:latest
