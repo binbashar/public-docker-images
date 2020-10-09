@@ -56,7 +56,7 @@ build-all: ## build all docker images
 #==============================================================#
 # DOCKER | TEST ALL IMAGES                                     #
 #==============================================================#
-push-all: ## build all docker images
+test-all: ## build all docker images
 	LIST=(${DOCKER_IMG_LIST});\
     OLDIFS=$$IFS;\
     IFS=',';\

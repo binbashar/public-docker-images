@@ -31,11 +31,11 @@ jobs:
 
       - run:
           name: Build docker images
-          command: make build
+          command: make build-all
 
       #- run:
       #    name: Run docker images tests
-      #    command: make test
+      #    command: make test-all
 
   #
   # Push docker images
@@ -67,7 +67,7 @@ jobs:
 
       - run:
           name: Push docker images
-          command: make push
+          command: make push-all
 
   #
   # Release
