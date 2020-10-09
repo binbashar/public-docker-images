@@ -25,13 +25,15 @@ init-makefiles: ## initialize makefiles
 # docker run tests
 #
 run-go-version: ## docker run go version
-	docker run -it --rm binbash/${DOCKER_IMG_NAME}:${DOCKER_TAG} version
+	docker run -it --rm ${DOCKER_REPO_NAME}/${DOCKER_IMG_NAME}:${DOCKER_TAG} version
 
 run-go-env: ## docker run go env
-	docker run -it --rm binbash/${DOCKER_IMG_NAME}:${DOCKER_TAG} env
+	docker run -it --rm ${DOCKER_REPO_NAME}/${DOCKER_IMG_NAME}:${DOCKER_TAG} env
 
 run-dep-version: ## docker run dep version
-	docker run -it --rm --entrypoint=dep binbash/${DOCKER_IMG_NAME}:${DOCKER_TAG} version
+	docker run -it --rm --entrypoint=dep ${DOCKER_REPO_NAME}/${DOCKER_IMG_NAME}:${DOCKER_TAG} version
 
 run-terraform-version: ## docker run terraform --version
-	docker run -it --rm --entrypoint=/usr/local/go/bin/terraform binbash/${DOCKER_IMG_NAME}:${DOCKER_TAG} --version
+	docker run -it --rm --entrypoint=/usr/local/go/bin/terraform ${DOCKER_REPO_NAME}/${DOCKER_IMG_NAME}:${DOCKER_TAG} --version
+
+test: run-go-version run-go-env run-dep-version run-terraform-version ## ci docker image tests

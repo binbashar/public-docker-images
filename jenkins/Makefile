@@ -20,3 +20,7 @@ init-makefiles: ## initialize makefiles
 	git clone https://github.com/binbashar/le-dev-makefiles.git ${MAKEFILES_DIR}
 
 -include ${MAKEFILES_DIR}/docker/docker-hub-build-push-single-arg.mk
+
+test: ## ci docker image tests
+	cd ./example-test && make up && make ps && make down
+	cd ..

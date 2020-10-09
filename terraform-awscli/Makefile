@@ -7,18 +7,16 @@ DOCKER_TAG       := 0.13.2
 DOCKER_REPO_NAME := binbash
 DOCKER_IMG_NAME  := terraform-awscli
 
-LOCAL_OS_USER := $(shell whoami)
 LOCAL_OS_AWS_CONF_DIR := ~/.aws/bb
-
-AWS_REGION := us-east-1
-AWS_IAM_PROFILE := bb-apps-devstg-devops
+AWS_REGION            := us-east-1
+AWS_IAM_PROFILE       := bb-apps-devstg-devops
 
 define AWSCLI_CMD_PREFIX
 docker run -it --rm \
 --name ${DOCKER_IMG_NAME} \
 -v ${LOCAL_OS_AWS_CONF_DIR}:/root/.aws \
 -e "AWS_DEFAULT_REGION=us-east-1" \
-binbash/${DOCKER_IMG_NAME}:${DOCKER_TAG}
+${DOCKER_REPO_NAME}/${DOCKER_IMG_NAME}:${DOCKER_TAG}
 endef
 
 define AWSCLI_CMD_BASH_PREFIX
@@ -26,7 +24,7 @@ docker run -it --rm \
 --name ${DOCKER_IMG_NAME} \
 -v ${LOCAL_OS_AWS_CONF_DIR}:/root/.aws \
 -e "AWS_DEFAULT_REGION=us-east-1" \
---entrypoint=bash binbash/${DOCKER_IMG_NAME}:${DOCKER_TAG}
+--entrypoint=bash ${DOCKER_REPO_NAME}/${DOCKER_IMG_NAME}:${DOCKER_TAG}
 endef
 
 help:
@@ -52,6 +50,9 @@ init-makefiles: ## initialize makefiles
 run-awscli-bash: ## docker run bash
 	${AWSCLI_CMD_BASH_PREFIX}
 
+run-awscli-version: ## docker run awscli version command
+	${AWSCLI_CMD_PREFIX} --version
+
 run-awscli: ## docker run awscli commands
 	${AWSCLI_CMD_PREFIX} --version
 	${AWSCLI_CMD_PREFIX} ec2 describe-instances --region ${AWS_REGION} --profile ${AWS_IAM_PROFILE}
@@ -60,23 +61,25 @@ run-awscli: ## docker run awscli commands
 #
 run-go-version: ## docker run go version
 	docker run -it --rm --entrypoint=/usr/local/go/bin/go \
-	binbash/${DOCKER_IMG_NAME}:${DOCKER_TAG} version
+	${DOCKER_REPO_NAME}/${DOCKER_IMG_NAME}:${DOCKER_TAG} version
 
 run-go-env: ## docker run go env
 	docker run -it --rm --entrypoint=/usr/local/go/bin/go \
-	binbash/${DOCKER_IMG_NAME}:${DOCKER_TAG} env
+	${DOCKER_REPO_NAME}/${DOCKER_IMG_NAME}:${DOCKER_TAG} env
 
 run-dep-version: ## docker run dep version
 	docker run -it --rm --entrypoint=dep \
-	binbash/${DOCKER_IMG_NAME}:${DOCKER_TAG} version
+	${DOCKER_REPO_NAME}/${DOCKER_IMG_NAME}:${DOCKER_TAG} version
 
 run-python-version: ## docker run python --version
 	docker run -it --rm --entrypoint=/usr/bin/python \
-	binbash/${DOCKER_IMG_NAME}:${DOCKER_TAG} --version
+	${DOCKER_REPO_NAME}/${DOCKER_IMG_NAME}:${DOCKER_TAG} --version
 
 run-terraform-version: ## docker run terraform --version
 	docker run -it --rm --entrypoint=/usr/local/go/bin/terraform \
-	binbash/${DOCKER_IMG_NAME}:${DOCKER_TAG} --version
+	${DOCKER_REPO_NAME}/${DOCKER_IMG_NAME}:${DOCKER_TAG} --version
 
 run-all: run-go-version run-go-env run-dep-version run-python-version run-terraform-version
+
+test: run-awscli-version run-all ## ci docker image tests
 

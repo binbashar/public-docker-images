@@ -113,3 +113,5 @@ test-smoke-local: ## curl local smoke test
 			echo ==================================================;\
 		fi;\
 	done
+
+test: test-run-docker-komiser test-stop-docker-komiser ## ci docker image tests

@@ -33,9 +33,9 @@ jobs:
           name: Build docker images
           command: make build-all
 
-      #- run:
-      #    name: Run docker images tests
-      #    command: make test-all
+      - run:
+          name: Run docker images tests
+          command: make test-all
 
   #
   # Push docker images

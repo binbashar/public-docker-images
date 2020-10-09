@@ -30,3 +30,4 @@ run-git-chglog: ## docker run git-chglog
 run-git-semtag: ## docker run semtag
 	docker run -it --rm -v "${DOCKER_PWD_DIR}:/data" --entrypoint=${DOCKER_SEMTAG_CMD} ${DOCKER_REPO_NAME}/git-release --version
 
+test: run-git-chglog run-git-semtag ## ci docker image tests

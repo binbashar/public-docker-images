@@ -38,14 +38,14 @@ init-makefiles: ## initialize makefiles
 -include ${MAKEFILES_DIR}/docker/docker-hub-build-push.mk
 
 test-run-ver: ## run docker image test-1
-	docker run --rm -it binbash/mysql-client:${DOCKER_TAG} -V
+	docker run --rm -it ${DOCKER_REPO_NAME}/mysql-client:${DOCKER_TAG} -V
 
 test-run-sql-file: ## run docker image test-2
 	docker-compose -f ${MYSQL_PATH_TO_SQL}/docker-compose.yml up -d
 	sleep ${MYSQL_BOOTSTRAP_SLEEP}
-	docker run --rm --network ${MYSQL_DOCKER_NW} -v ${MYSQL_PATH_TO_SQL}:/sql --link ${MYSQL_CONT_NQME_5.6}:mysql -it binbash/mysql-client:${DOCKER_TAG} -h mysql -p${MYSQL_ROOT_PASS} -D ${MYSQL_DATABASE} -e "source /sql/${MYSQ_SQL_FILE}"; \
-	docker run --rm --network ${MYSQL_DOCKER_NW} -v ${MYSQL_PATH_TO_SQL}:/sql --link ${MYSQL_CONT_NQME_5.7}:mysql -it binbash/mysql-client:${DOCKER_TAG} -h mysql -p${MYSQL_ROOT_PASS} -D ${MYSQL_DATABASE} -e "source /sql/${MYSQ_SQL_FILE}"; \
-	docker run --rm --network ${MYSQL_DOCKER_NW} -v ${MYSQL_PATH_TO_SQL}:/sql --link ${MYSQL_CONT_NQME_8.0}:mysql -it binbash/mysql-client:${DOCKER_TAG} -h mysql -p${MYSQL_ROOT_PASS} -D ${MYSQL_DATABASE} -e "source /sql/${MYSQ_SQL_FILE}"
+	docker run --rm --network ${MYSQL_DOCKER_NW} -v ${MYSQL_PATH_TO_SQL}:/sql --link ${MYSQL_CONT_NQME_5.6}:mysql -it ${DOCKER_REPO_NAME}/mysql-client:${DOCKER_TAG} -h mysql -p${MYSQL_ROOT_PASS} -D ${MYSQL_DATABASE} -e "source /sql/${MYSQ_SQL_FILE}"; \
+	docker run --rm --network ${MYSQL_DOCKER_NW} -v ${MYSQL_PATH_TO_SQL}:/sql --link ${MYSQL_CONT_NQME_5.7}:mysql -it ${DOCKER_REPO_NAME}/mysql-client:${DOCKER_TAG} -h mysql -p${MYSQL_ROOT_PASS} -D ${MYSQL_DATABASE} -e "source /sql/${MYSQ_SQL_FILE}"; \
+	docker run --rm --network ${MYSQL_DOCKER_NW} -v ${MYSQL_PATH_TO_SQL}:/sql --link ${MYSQL_CONT_NQME_8.0}:mysql -it ${DOCKER_REPO_NAME}/mysql-client:${DOCKER_TAG} -h mysql -p${MYSQL_ROOT_PASS} -D ${MYSQL_DATABASE} -e "source /sql/${MYSQ_SQL_FILE}"
 	docker-compose -f ${MYSQL_PATH_TO_SQL}/docker-compose.yml stop
 	docker-compose -f ${MYSQL_PATH_TO_SQL}/docker-compose.yml rm --force
 	docker volume rm example-test_database_data_5.6 example-test_database_data_5.7 example-test_database_data_8.0 --force
@@ -53,10 +53,12 @@ test-run-sql-file: ## run docker image test-2
 test-run-sql-cmd: ## run docker image test-3
 	docker-compose -f ${MYSQL_PATH_TO_SQL}/docker-compose.yml up -d
 	sleep ${MYSQL_BOOTSTRAP_SLEEP}
-	docker run --rm --network ${MYSQL_DOCKER_NW} --link ${MYSQL_CONT_NQME_5.6}:mysql -it binbash/mysql-client:${DOCKER_TAG} -h mysql -u root -p${MYSQL_ROOT_PASS} -e ${MYSQL_COMMAND}; \
-	docker run --rm --network ${MYSQL_DOCKER_NW} --link ${MYSQL_CONT_NQME_5.7}:mysql -it binbash/mysql-client:${DOCKER_TAG} -h mysql -u root -p${MYSQL_ROOT_PASS} -e ${MYSQL_COMMAND}; \
-	docker run --rm --network ${MYSQL_DOCKER_NW} --link ${MYSQL_CONT_NQME_8.0}:mysql -it binbash/mysql-client:${DOCKER_TAG} -h mysql -u root -p${MYSQL_ROOT_PASS} -e ${MYSQL_COMMAND}
+	docker run --rm --network ${MYSQL_DOCKER_NW} --link ${MYSQL_CONT_NQME_5.6}:mysql -it ${DOCKER_REPO_NAME}/mysql-client:${DOCKER_TAG} -h mysql -u root -p${MYSQL_ROOT_PASS} -e ${MYSQL_COMMAND}; \
+	docker run --rm --network ${MYSQL_DOCKER_NW} --link ${MYSQL_CONT_NQME_5.7}:mysql -it ${DOCKER_REPO_NAME}/mysql-client:${DOCKER_TAG} -h mysql -u root -p${MYSQL_ROOT_PASS} -e ${MYSQL_COMMAND}; \
+	docker run --rm --network ${MYSQL_DOCKER_NW} --link ${MYSQL_CONT_NQME_8.0}:mysql -it ${DOCKER_REPO_NAME}/mysql-client:${DOCKER_TAG} -h mysql -u root -p${MYSQL_ROOT_PASS} -e ${MYSQL_COMMAND}
 	docker-compose -f ${MYSQL_PATH_TO_SQL}/docker-compose.yml stop
 	docker-compose -f ${MYSQL_PATH_TO_SQL}/docker-compose.yml rm --force
 	docker volume rm example-test_database_data_5.6 example-test_database_data_5.7 example-test_database_data_8.0 --force
+
+test: test-run-ver test-run-sql-file test-run-sql-cmd ## ci docker image tests
 

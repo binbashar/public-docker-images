@@ -17,6 +17,18 @@ define DOCKER_IMG_LIST
 "terraform-resources"
 endef
 
+define DOCKER_IMG_TEST_LIST
+"aws-cli" \
+"git-release" \
+"jenkins" \
+"mysql-client" \
+"sec-scoutsuite" \
+"terraform-awscli" \
+"terraform-awscli-slim" \
+"terraform-awscli-terratest-slim" \
+"terraform-resources"
+endef
+
 help:
 	@echo 'Available Commands:'
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf " - \033[36m%-18s\033[0m %s\n", $$1, $$2}'
@@ -57,7 +69,7 @@ build-all: ## build all docker images
 # DOCKER | TEST ALL IMAGES                                     #
 #==============================================================#
 test-all: ## build all docker images
-	LIST=(${DOCKER_IMG_LIST});\
+	LIST=(${DOCKER_IMG_TEST_LIST});\
     OLDIFS=$$IFS;\
     IFS=',';\
     for i in "$${LIST[@]}"; do\
@@ -69,7 +81,7 @@ test-all: ## build all docker images
 				make test;\
 				cd ..;\
         echo -----------------------;\
-        echo "DOCKER BUILD DONE";\
+        echo "DOCKER TEST DONE";\
         echo "";\
 	done;\
 	IFS=$$OLDIFS
@@ -90,7 +102,7 @@ push-all: ## build all docker images
 				make push;\
 				cd ..;\
         echo -----------------------;\
-        echo "DOCKER BUILD DONE";\
+        echo "DOCKER PUSH DONE";\
         echo "";\
 	done;\
 	IFS=$$OLDIFS

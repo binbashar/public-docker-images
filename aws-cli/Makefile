@@ -8,7 +8,7 @@ DOCKER_REPO_NAME := binbash
 DOCKER_IMG_NAME  := aws-cli
 
 LOCAL_OS_USER := $(shell whoami)
-LOCAL_OS_AWS_CONF_DIR := ~/.aws
+LOCAL_OS_AWS_CONF_DIR := ~/.aws/bb
 
 AWS_REGION := us-east-1
 AWS_IAM_PROFILE := bb-dev-devops
@@ -46,7 +46,11 @@ init-makefiles: ## initialize makefiles
 test-run-awscli-bash: ## docker run bash
 	${AWSCLI_CMD_BASH_PREFIX}
 
+test-run-awscli-ver: ## docker run awscli commands
+	${AWSCLI_CMD_PREFIX} --version
+
 test-run-awscli: ## docker run awscli commands
 	${AWSCLI_CMD_PREFIX} --version
 	${AWSCLI_CMD_PREFIX} ec2 describe-instances --region ${AWS_REGION} --profile ${AWS_IAM_PROFILE}
 
+test: test-run-awscli-ver ## ci docker image tests
