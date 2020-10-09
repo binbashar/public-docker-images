@@ -1,8 +1,11 @@
-FROM binbash/terraform-resources:0.13.2
+ARG DOCKER_TAG
+ARG TERRAFORM_VERSION=${DOCKER_TAG}
+
+FROM binbash/terraform-resources:${TERRAFORM_VERSION}
 
 MAINTAINER Binbash Leverage (info@binbash.com.ar)
 
-ENV AWSCLI_VERSION=1.18.152
+ENV AWSCLI_VERSION=1.18.156
 ENV PYTHON_VERSION=3.8.6
 
 #

@@ -1,9 +1,11 @@
-ARG TERRAFORM_VERSION=0.13.2
+ARG DOCKER_TAG
+ARG TERRAFORM_VERSION=${DOCKER_TAG}
+
 FROM hashicorp/terraform:${TERRAFORM_VERSION}
 
 LABEL vendor="Binbash Leverage (info@binbash.com.ar)"
 
-ARG AWSCLI_VERSION=1.18.126
+ARG AWSCLI_VERSION=1.18.156
 
 # Install python3 and other useful dependencies
 RUN apk update

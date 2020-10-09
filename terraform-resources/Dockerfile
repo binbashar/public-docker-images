@@ -2,11 +2,9 @@ FROM golang:latest
 
 MAINTAINER Binbash Leverage (info@binbash.com.ar)
 
-# Here TERRAFORM_VERSION is coming from the custom build args TERRAFORM_VERSION=$DOCKER_TAG hooks/file script.
-# Ref: https://docs.docker.com/docker-hub/builds/advanced/
-ARG TERRAFORM_VERSION
+ARG DOCKER_TAG
+ARG TERRAFORM_VERSION=${DOCKER_TAG}
 
-ENV TERRAFORM_VERSION $TERRAFORM_VERSION
 RUN apt-get update && apt-get install -y --no-install-recommends unzip git bash openssl
 RUN wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip \
     && unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip \
