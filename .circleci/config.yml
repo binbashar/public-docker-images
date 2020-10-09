@@ -66,8 +66,8 @@ jobs:
           command: echo "$DOCKER_HUB_PASS" | docker login -u $DOCKER_HUB_USER --password-stdin
 
       - run:
-          name: Push docker images
-          command: make push-all
+          name: Build && Push docker images
+          command: make build-all && make push-all
 
   #
   # Release
