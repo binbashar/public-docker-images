@@ -7,6 +7,17 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.0.36"></a>
+## [v0.0.36] - 2020-10-09
+
+- BBL-313 | adding cross image tests
+- BBL-313 | improving docker login cmd to avoid sec warning
+- BBL-313 | fixing makefile + circleci config
+- BBL-313 | fixing circleci config file
+- BBL-313 | Updating Makefiles + Dockerfiles to use new fully as code build approach + CircleCi config updated
+- BBL-313 | removing old build files + discontuined supported images
+
+
 <a name="v0.0.35"></a>
 ## [v0.0.35] - 2020-10-08
 
@@ -291,7 +302,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/public-docker-images/compare/v0.0.35...HEAD
+[Unreleased]: https://github.com/binbashar/public-docker-images/compare/v0.0.36...HEAD
+[v0.0.36]: https://github.com/binbashar/public-docker-images/compare/v0.0.35...v0.0.36
 [v0.0.35]: https://github.com/binbashar/public-docker-images/compare/v0.0.34...v0.0.35
 [v0.0.34]: https://github.com/binbashar/public-docker-images/compare/v0.0.33...v0.0.34
 [v0.0.33]: https://github.com/binbashar/public-docker-images/compare/v0.0.32...v0.0.33
