@@ -12,8 +12,10 @@ services:
 #============================================#
     jenkins_local:
         build:
-          context: ./docker/jenkins/
-          dockerfile: Dockerfile_jenkins_extras
+          context: ../
+          dockerfile: Dockerfile
+          args:
+            - DOCKER_TAG=2.260-slim
         ports:
             - 8080:8080
             - 50000:50000
@@ -46,7 +48,7 @@ services:
           - bb-jenkins
 
         env_file:
-        - ./docker/jenkins/jenkins.env
+        - ./jenkins.env
 
 #============================================#
 # Setup the logs container

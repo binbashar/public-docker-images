@@ -1,4 +1,6 @@
-ARG TERRAFORM_VERSION=0.13.2
+ARG DOCKER_TAG
+ARG TERRAFORM_VERSION=${DOCKER_TAG}
+
 FROM binbash/terraform-awscli-slim:${TERRAFORM_VERSION}
 
 LABEL vendor="Binbash Leverage (info@binbash.com.ar)"

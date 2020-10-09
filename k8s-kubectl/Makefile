@@ -11,6 +11,7 @@ define DOCKER_TAG_LIST
 "v1.18.9"
 endef
 
+DOCKER_TAG       := v1.17.12
 DOCKER_REPO_NAME := binbash
 DOCKER_IMG_NAME  := k8s-kubectl
 
@@ -28,7 +29,7 @@ docker run -it --rm \
 -v ${LOCAL_OS_KUBE_DIR}:/${DOCKER_IMG_USER}/.kube \
 -v ${LOCAL_OS_MINIKUBE_DIR}:/${DOCKER_IMG_USER}/.minikube \
 -e "KUBECONFIG=${K8S_KUBECTL_CONFIG_FILE_PATH}" \
-binbash/${DOCKER_IMG_NAME}:${DOCKER_TAG}
+${DOCKER_REPO_NAME}/${DOCKER_IMG_NAME}:${DOCKER_TAG}
 endef
 
 define K8S_KUBECTL_CMD_BASH_PREFIX
@@ -36,7 +37,7 @@ docker run -it --rm \
 -v ${LOCAL_OS_KUBE_DIR}:/${DOCKER_IMG_USER}/.kube \
 -v ${LOCAL_OS_MINIKUBE_DIR}:/${DOCKER_IMG_USER}/.minikube \
 -e "KUBECONFIG=${K8S_KUBECTL_CONFIG_FILE_PATH}" \
---entrypoint=bash binbash/${DOCKER_IMG_NAME}:${DOCKER_TAG}
+--entrypoint=bash ${DOCKER_REPO_NAME}/${DOCKER_IMG_NAME}:${DOCKER_TAG}
 endef
 
 help:

@@ -1,8 +1,11 @@
-FROM binbash/terraform-resources:0.13.2
+ARG DOCKER_TAG
+ARG TERRAFORM_VERSION=${DOCKER_TAG}
+
+FROM binbash/terraform-resources:${TERRAFORM_VERSION}
 
 MAINTAINER Binbash Leverage (info@binbash.com.ar)
 
-ENV AWSCLI_VERSION=1.18.152
+ENV AWSCLI_VERSION=1.18.156
 ENV PYTHON_VERSION=3.8.6
 
 #
@@ -20,16 +23,19 @@ RUN apt-get update \
 	&& make altinstall
 
 #
-# awscli Installation
+# Installing dependencies
 #
 RUN apt-get install -y jq python3-pip \
-	&& apt-get clean \
-	&& pip3 install --upgrade pip \
-	&& pip3 install -Iv awscli==${AWSCLI_VERSION}
+	&& apt-get clean
 
 #
 # Check python was correctly installed
 RUN update-alternatives --install /usr/bin/python3 python3 /usr/local/bin/python3.8 1 && python3 --version
+
+#
+# Installing awscli
+RUN pip3 install --upgrade pip \
+	&& pip3 install awscli==${AWSCLI_VERSION}
 
 CMD ["--version"]
 ENTRYPOINT ["aws"]
