@@ -7,6 +7,12 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.0.37"></a>
+## [v0.0.37] - 2020-10-09
+
+- BBL-313 | adding build step before pushing at master
+
+
 <a name="v0.0.36"></a>
 ## [v0.0.36] - 2020-10-09
 
@@ -302,7 +308,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/public-docker-images/compare/v0.0.36...HEAD
+[Unreleased]: https://github.com/binbashar/public-docker-images/compare/v0.0.37...HEAD
+[v0.0.37]: https://github.com/binbashar/public-docker-images/compare/v0.0.36...v0.0.37
 [v0.0.36]: https://github.com/binbashar/public-docker-images/compare/v0.0.35...v0.0.36
 [v0.0.35]: https://github.com/binbashar/public-docker-images/compare/v0.0.34...v0.0.35
 [v0.0.34]: https://github.com/binbashar/public-docker-images/compare/v0.0.33...v0.0.34
