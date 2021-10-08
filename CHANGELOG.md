@@ -7,6 +7,12 @@ All notable changes to this project will be documented in this file.
 
 
 
+<a name="v0.0.42"></a>
+## [v0.0.42] - 2021-10-08
+
+- Create FUNDING.yml
+
+
 <a name="v0.0.41"></a>
 ## [v0.0.41] - 2021-05-07
 
@@ -334,7 +340,8 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-[Unreleased]: https://github.com/binbashar/public-docker-images/compare/v0.0.41...HEAD
+[Unreleased]: https://github.com/binbashar/public-docker-images/compare/v0.0.42...HEAD
+[v0.0.42]: https://github.com/binbashar/public-docker-images/compare/v0.0.41...v0.0.42
 [v0.0.41]: https://github.com/binbashar/public-docker-images/compare/v0.0.40...v0.0.41
 [v0.0.40]: https://github.com/binbashar/public-docker-images/compare/v0.0.39...v0.0.40
 [v0.0.39]: https://github.com/binbashar/public-docker-images/compare/v0.0.38...v0.0.39
