@@ -1,4 +1,4 @@
-FROM debian:buster-slim
+FROM debian:10.12-slim
 
 MAINTAINER Binbash Leverage (info@binbash.com.ar)
 
