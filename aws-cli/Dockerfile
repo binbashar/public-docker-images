@@ -1,7 +1,7 @@
 #
 # Set the base image
 #
-FROM python:3.8
+FROM python:3.14.0a4
 
 MAINTAINER Binbash Leverage (info@binbash.com.ar)
 
