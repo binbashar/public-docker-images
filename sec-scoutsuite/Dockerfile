@@ -1,7 +1,7 @@
 #
 # Set the base image
 #
-FROM alpine:3.12
+FROM alpine:3.21.3
 
 MAINTAINER Binbash Leverage (info@binbash.com.ar)
 
